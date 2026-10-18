@@ -377,6 +377,9 @@
     }
     .screen-card figcaption .screen-caption { margin-top: .55rem; }
     .journal-intro span { max-width: 68ch; }
+    @media (max-width: 1180px) {
+      .header-snapshot { display: none; }
+    }
     @media (max-width: 1050px) {
       .section-heading { display: block; }
       .section-heading p { max-width: 65ch; margin-top: 1rem; }
@@ -415,7 +418,6 @@
       .section-heading h2 { font-size: clamp(2.1rem, 8vw, 2.7rem); line-height: 1.13; }
       .header-row { min-height: 70px; flex-direction: row; align-items: center; gap: .75rem; }
       .mobile-menu { flex: none; }
-      .header-snapshot { display: none; }
       .hero-grid { padding-block: 2.25rem 2.8rem; }
       .hero-origin { padding: 1.25rem; }
       .hero-origin h2 { font-size: clamp(1.9rem, 7.5vw, 2.5rem); line-height: 1.18; }
@@ -540,7 +542,7 @@
       <div class="evidence-band">
         <div class="wrap evidence-single">
           <strong class="evidence-value">7</strong>
-          <div><span class="evidence-label">Full days since the first commit</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time datetime="2026-10-11T05:46:22Z">11 October 2026<br>05:46&nbsp;UTC</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-18T13:15Z">18 October 2026<br>13:15</time></dd></div></dl><p class="evidence-definition">This counts elapsed time, not days worked.</p></div>
+          <div><span class="evidence-label">Full days since the first commit</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time datetime="2026-10-11T05:46:22Z">11 October 2026<br>05:46&nbsp;UTC</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-18T13:15Z">18 October 2026</time></dd></div></dl><p class="evidence-definition">This counts elapsed time, not days worked.</p></div>
         </div>
       </div>
       <div class="wrap hero-tail"><span>Personal experiment · private source</span><span>Built around existing Redmine data</span><span>No speed result yet</span></div>
