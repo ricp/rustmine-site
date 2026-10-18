@@ -318,6 +318,34 @@
     .maintenance-aside h3 { font: 500 1.8rem/1.15 var(--serif); letter-spacing: -.04em; }
     @media (min-width: 1180px) { .maintenance-aside h3 { white-space: nowrap; } }
     .maintenance-aside p { color: var(--muted); font-size: 1rem; margin-bottom: 0; }
+    .upstream-watch { background: var(--paper); border-top: 1px solid var(--line); }
+    .upstream-top { display: flex; justify-content: space-between; align-items: start; gap: 2rem; padding-bottom: 1.7rem; border-bottom: 1px solid var(--line); }
+    .upstream-top .eyebrow { color: #316b53; }
+    .upstream-top h2 { font-size: clamp(2.3rem, 4.2vw, 3.7rem); line-height: 1.12; margin: .7rem 0 0; }
+    .upstream-intro { max-width: 59ch; color: var(--muted); font-size: 1.05rem; line-height: 1.65; margin: .85rem 0 0; }
+    .upstream-checked { flex: 0 0 205px; border-left: 3px solid var(--accent); padding: .15rem 0 .15rem .9rem; }
+    .upstream-checked span { display: block; color: var(--muted); font: 700 .8rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .upstream-checked time { display: block; margin-top: .35rem; font: 700 .95rem/1.45 var(--sans); }
+    .upstream-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1rem; margin-top: 1.6rem; align-items: stretch; }
+    .upstream-card { min-width: 0; background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--forest); padding: 1.35rem 1.4rem 1.3rem; }
+    .upstream-card.observed { border-top-color: var(--accent); }
+    .upstream-card.integrated { border-top-color: #87938a; }
+    .upstream-card.integrated .upstream-state { color: var(--muted); }
+    .upstream-state, .upstream-source-label { display: block; color: #316b53; font: 700 .8rem/1.45 var(--mono); text-transform: uppercase; letter-spacing: .09em; }
+    .upstream-card.observed .upstream-state { color: #a35539; }
+    .upstream-card h3 { font: 500 1.67rem/1.16 var(--serif); letter-spacing: -.035em; margin: .4rem 0 .9rem; }
+    .upstream-card p { font-size: .91rem; line-height: 1.58; margin-bottom: .8rem; }
+    .upstream-card p:last-child { margin-bottom: 0; }
+    .upstream-item { border-top: 1px solid var(--line); padding-top: .8rem; margin-top: .8rem; }
+    .upstream-item strong { display: block; font-size: .97rem; line-height: 1.35; }
+    .upstream-item small { display: block; color: var(--muted); font-size: .82rem; line-height: 1.45; margin-top: .25rem; }
+    .upstream-item p { margin: .42rem 0 0; }
+    .upstream-card a, .upstream-foot a { color: var(--forest); font-weight: 700; }
+    .upstream-card a:hover, .upstream-foot a:hover { color: #a35539; }
+    .upstream-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 1.5rem; margin-top: 1.4rem; padding-top: 1.15rem; border-top: 1px solid var(--line); }
+    .upstream-foot p { max-width: 67ch; color: var(--muted); font-size: .86rem; margin-bottom: 0; }
+    .upstream-source-label { margin-bottom: .3rem; }
+    .upstream-foot a { font-size: .86rem; white-space: nowrap; }
     .measure-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
     .measure h2 { font-size: clamp(2.6rem, 5vw, 4.7rem); line-height: 1.04; margin: .6rem 0 1.3rem; }
     .measure h2 em { color: #a95635; font-style: normal; }
@@ -426,6 +454,8 @@
       .entry time { font: 700 1.06rem/1.45 var(--sans); color: var(--forest-deep); }
       .team-lane { grid-template-columns: 140px 1fr; }
       .cost-grid { grid-template-columns: repeat(2, 1fr); }
+      .upstream-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .upstream-card.integrated { grid-column: 1 / -1; }
     }
     @media (max-width: 620px) {
       .wrap { width: min(100% - 2rem, 1180px); }
@@ -470,6 +500,15 @@
       .measure h2 { font-size: clamp(2.2rem, 8vw, 2.8rem); line-height: 1.12; }
       .maintenance-flow li { grid-template-columns: 2rem minmax(0, 1fr); gap: .85rem; padding: 1.25rem 0; line-height: 1.65; }
       .maintenance-flow li::before { font-size: .9rem; }
+      .upstream-top { display: block; }
+      .upstream-checked { margin-top: 1.5rem; }
+      .upstream-grid { grid-template-columns: minmax(0, 1fr); }
+      .upstream-card.integrated { grid-column: auto; }
+      .upstream-card { padding: 1.25rem; }
+      .upstream-state, .upstream-source-label, .upstream-checked span { font-size: .85rem; }
+      .upstream-item small { font-size: .86rem; }
+      .upstream-foot { grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+      .upstream-foot a { white-space: normal; }
       .entry { padding: 2rem 0 2.25rem; }
       .entry h3 { font-size: clamp(1.65rem, 7vw, 2.1rem); line-height: 1.2; margin: .55rem 0 .85rem; }
       .entry p { font-size: 1.05rem; line-height: 1.7; }
@@ -757,6 +796,47 @@
         </div>
       </div>
     </section>
+
+    <!-- upstream-watch:start; refresh contract: docs/UPSTREAM_WATCH_REFRESH.md -->
+    <section class="section upstream-watch" id="upstream-watch" aria-labelledby="upstream-watch-title">
+      <div class="wrap">
+        <div class="upstream-top">
+          <div>
+            <div class="eyebrow">After the first port / Source watch</div>
+            <h2 id="upstream-watch-title">Keeping up with Redmine.</h2>
+            <p class="upstream-intro">RustMine is built against Redmine 7.0.2. This watch keeps later upstream changes separate from the work needed to review and release them in RustMine.</p>
+          </div>
+          <div class="upstream-checked"><span>Research snapshot</span><time datetime="2026-10-18T11:44:00Z">18 October 2026<br>11:44 UTC</time></div>
+        </div>
+        <div class="upstream-grid">
+          <article class="upstream-card observed">
+            <span class="upstream-state">01 / Seen upstream</span>
+            <h3>Committed after 7.0.2</h3>
+            <p>Examples from Redmine’s code history, linked through its community GitHub mirror. A commit on trunk or a stable branch is not a Redmine release.</p>
+            <div class="upstream-item"><strong>Email changes revoke login tokens</strong><small>7.0-stable backport · unreleased at this check</small><p><a href="https://github.com/redmine/redmine/commit/a1b9c09eeda30c2546057f53010ba95abdb2d57f" target="_blank" rel="noopener noreferrer" aria-label="Email-change token fix mirror commit (opens in a new tab)" title="Opens in a new tab">Read the mirror commit ↗</a></p></div>
+            <div class="upstream-item"><strong>Named non-working dates</strong><small>Trunk commit · not in Redmine 7.0.2</small><p><a href="https://github.com/redmine/redmine/commit/b948e0b3482a7da6ee76cf25d11ca12661963491" target="_blank" rel="noopener noreferrer" aria-label="Named non-working dates mirror commit (opens in a new tab)" title="Opens in a new tab">Read the mirror commit ↗</a></p></div>
+          </article>
+          <article class="upstream-card">
+            <span class="upstream-state">02 / For RustMine review</span>
+            <h3>Decisions before code</h3>
+            <p>These changes have been flagged for closer comparison. A review item is not a commitment to implement it.</p>
+            <div class="upstream-item"><strong>Email changes revoke login tokens</strong><p>Compare email-change token handling with RustMine’s account and session behavior.</p></div>
+            <div class="upstream-item"><strong>Named non-working dates</strong><p>Check how non-working dates would affect the original-data contract before choosing an approach.</p></div>
+          </article>
+          <article class="upstream-card integrated">
+            <span class="upstream-state">03 / Verified in RustMine</span>
+            <h3>No adoption recorded yet</h3>
+            <p>No post-7.0.2 change from this watch has a verified RustMine release entry in the initial research snapshot.</p>
+            <p>When a change passes the RustMine release checks, this column can link to the tested workflow and dated release.</p>
+          </article>
+        </div>
+        <div class="upstream-foot">
+          <p><span class="upstream-source-label">How to read this</span>A change may appear on both trunk and a stable branch. This view follows the behavior once, and marks the branch where it was seen. Seen upstream does not mean released by Redmine or integrated into RustMine.</p>
+          <a href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 baseline (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2 baseline ↗</a>
+        </div>
+      </div>
+    </section>
+    <!-- upstream-watch:end -->
 
     <section class="section measure" id="benchmark" aria-labelledby="benchmark-title">
       <div class="wrap measure-grid">
