@@ -316,6 +316,7 @@
     .maintenance-step-content { min-width: 0; }
     .maintenance-aside { background: var(--white); border-left: 4px solid var(--accent); padding: 1.7rem 2rem; align-self: start; }
     .maintenance-aside h3 { font: 500 1.8rem/1.15 var(--serif); letter-spacing: -.04em; }
+    @media (min-width: 1180px) { .maintenance-aside h3 { white-space: nowrap; } }
     .maintenance-aside p { color: var(--muted); font-size: 1rem; margin-bottom: 0; }
     .measure-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
     .measure h2 { font-size: clamp(2.6rem, 5vw, 4.7rem); line-height: 1.04; margin: .6rem 0 1.3rem; }
@@ -751,7 +752,7 @@
             <li><span class="maintenance-step-content">Add tests for those changes, then update RustMine’s behavior where needed.</span></li>
             <li><span class="maintenance-step-content">Review the result, test it with the supported databases, and check existing data before making a RustMine release.</span></li>
           </ol>
-          <aside class="maintenance-aside"><h3>Watch regularly.<br>Ship deliberately.</h3><p>I would review security fixes quickly, but a new Redmine change should not automatically change RustMine. Surprise software updates are rarely anyone’s favorite kind of surprise.</p></aside>
+          <aside class="maintenance-aside"><h3>Watch regularly. Ship deliberately.</h3><p>I would review security fixes quickly, but a new Redmine change should not automatically change RustMine. Surprise software updates are rarely anyone’s favorite kind of surprise.</p></aside>
         </div>
       </div>
     </section>
@@ -767,10 +768,10 @@
       <div class="wrap">
         <div class="section-heading"><div><div class="eyebrow">Tools behind the work</div><h2 id="cost-title">What I use to build it.</h2></div><p>For this experiment, I use <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> and a dedicated <a class="external-link" href="https://www.apple.com/mac-mini/" target="_blank" rel="noopener noreferrer" aria-label="Mac mini (opens in a new tab)" title="Opens in a new tab">Mac mini</a>. I keep the engineering decisions and review in my own hands.</p></div>
         <div class="cost-grid">
-          <div class="cost-item"><h3>Codex subscription</h3><strong>$200 monthly plan</strong><p>I use OpenAI’s $200 monthly plan for this project. This is a subscription price, not the project’s total cost.</p></div>
+          <div class="cost-item"><h3>Codex subscription</h3><strong>$200 monthly plan</strong><p>I use OpenAI’s $200 monthly plan for RustMine and my other projects. That is the subscription price, not a cost dedicated to RustMine.</p></div>
           <div class="cost-item"><h3>Dedicated hardware</h3><strong>Mac mini</strong><p>I bought a 16 GB / 512 GB Mac mini for the experiment.</p></div>
         </div>
-        <div class="cost-after"><p>RustMine also lets me try <a class="external-link" href="https://openai.com/" target="_blank" rel="noopener noreferrer" aria-label="OpenAI (opens in a new tab)" title="Opens in a new tab">OpenAI</a>’s <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6 Sol</a> and <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6.1-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6.1 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6.1 Sol</a> through <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> on an application I know well. I use a mostly stock setup while I test what the models can help build.</p><p>My job remains to understand the work, review its evidence, and decide what belongs in the product. I have not calculated the total cost of this experiment.</p></div>
+        <div class="cost-after"><p>One reason I started RustMine was to try <a class="external-link" href="https://openai.com/" target="_blank" rel="noopener noreferrer" aria-label="OpenAI (opens in a new tab)" title="Opens in a new tab">OpenAI</a>’s <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6 Sol</a> and <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6.1-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6.1 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6.1 Sol</a> on an application I know well, using <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> straight out of the box without a custom configuration.</p><p>My job remains to understand the work, review its evidence, and decide what belongs in the product. I have not calculated the total cost of this experiment.</p></div>
       </div>
     </section>
 
