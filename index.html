@@ -179,6 +179,8 @@
     .build-day-body p + p { margin-top: .85rem; }
     main section { scroll-margin-top: 108px; }
     .section { padding-block: clamp(4rem, 7vw, 7rem); }
+    .section.team, .section.directions { padding-bottom: clamp(2.25rem, 3vw, 3.5rem); }
+    .section.process, .section.journal { padding-top: clamp(2.25rem, 3vw, 3.5rem); }
     .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.8rem; }
     .section-heading h2 { font-size: clamp(2.6rem, 5vw, 4.55rem); line-height: 1.06; max-width: 780px; margin-bottom: 0; }
     .section-heading p { max-width: 38ch; color: var(--muted); font-size: 1rem; margin-bottom: .15rem; }
@@ -682,7 +684,7 @@
 
     <section class="section status" id="status" aria-labelledby="status-title">
       <div class="wrap">
-        <div class="section-heading"><div><div class="eyebrow">Private build · 17 October 2026&nbsp;UTC</div><h2 id="status-title">What already works.</h2></div><p>These are usable paths in a local Rust build. Each is a bounded part of Redmine, not full parity or a customer-ready installation.</p></div>
+        <div class="section-heading"><div><div class="eyebrow">Local preview · <time datetime="2026-10-18T16:28:53Z">18 October 2026</time></div><h2 id="status-title">What already works.</h2></div><p>These are usable paths in a local Rust build. Each is a bounded part of Redmine, not full parity or a customer-ready installation.</p></div>
         <div class="capability-grid">
           <article class="capability"><h3>Projects and access</h3><p>Sign in and manage projects, members, roles, settings, and supported project copies.</p></article>
           <article class="capability"><h3>Issues and planning</h3><p>Create and edit issues. Use queries, bulk actions, relations, and watchers, plus Calendar, Gantt, and roadmap views.</p></article>
