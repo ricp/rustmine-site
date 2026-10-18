@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">RustMine favicon</title>
+  <desc id="desc">The current RustMine site mark: a rotated orange square frame with a solid square center on deep forest green.</desc>
+  <rect width="64" height="64" rx="8" fill="#102b27"/>
+  <g transform="rotate(-9 32 32)" fill="#df693c">
+    <path fill-rule="evenodd" d="M11 11h42v42H11zM18 18v28h28V18z"/>
+    <path d="M26 26h12v12H26z"/>
+  </g>
+</svg>
