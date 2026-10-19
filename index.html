@@ -596,8 +596,8 @@
       </div>
       <div class="evidence-band">
         <div class="wrap evidence-single">
-          <strong class="evidence-value">7</strong>
-          <div><span class="evidence-label">Full days since the first commit</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time datetime="2026-10-11T05:46:22Z">11 October 2026</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-19T03:17:04Z">19 October 2026</time></dd></div></dl><p class="evidence-definition">This counts elapsed time, not days worked.</p></div>
+          <strong class="evidence-value" id="days-since-start">8</strong>
+          <div><span class="evidence-label">Days since starting</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time id="first-commit-date" datetime="2026-10-11T05:46:22Z">11 October 2026</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-19T03:17:04Z">19 October 2026</time></dd></div></dl><p class="evidence-definition">Counted by UTC calendar date, not days worked. The snapshot dates the project evidence.</p></div>
         </div>
       </div>
       <div class="wrap hero-tail"><span>Personal experiment · private source</span><span>Built around existing Redmine data</span><span>No speed result yet</span></div>
@@ -891,6 +891,26 @@
   <footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 19 October 2026</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="#privacy">Privacy details</a>.</p></div></footer>
   <script src="/analytics.js" defer></script>
   <script>
+    (() => {
+      const counter = document.getElementById('days-since-start');
+      const firstCommit = document.getElementById('first-commit-date');
+      if (!counter || !firstCommit) return;
+      const start = new Date(firstCommit.dateTime);
+      if (Number.isNaN(start.getTime())) return;
+      const utcDay = date => Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+      const startDay = utcDay(start);
+      function update() {
+        counter.textContent = String(Math.max(0, Math.round((utcDay(new Date()) - startDay) / 86400000)));
+      }
+      function scheduleNextDay() {
+        const now = new Date();
+        const nextMidnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+        setTimeout(() => { update(); scheduleNextDay(); }, nextMidnight - now.getTime() + 1000);
+      }
+      update();
+      scheduleNextDay();
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) update(); });
+    })();
     (() => {
       const header = document.querySelector('.site-header');
       const menu = document.getElementById('mobile-menu');
