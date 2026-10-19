@@ -279,6 +279,12 @@
     .direction-body .direction-detail { margin: .5rem 0 0; font-size: .95rem; }
     .direction-detail strong { color: var(--ink); }
     .directions-note { margin: 1.4rem 0 0; color: var(--muted); font-size: 1rem; }
+    .theme-roadmap { margin-top: 2rem; padding: clamp(1.5rem, 3vw, 2.2rem); border: 1px solid var(--line); border-left: 4px solid var(--accent); background: var(--paper); }
+    .theme-roadmap-status { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1rem; }
+    .theme-roadmap-status time { color: var(--muted); font: 700 .85rem/1.45 var(--mono); }
+    .theme-roadmap h3 { font: 500 clamp(1.6rem, 2.7vw, 2.2rem)/1.15 var(--serif); letter-spacing: -.035em; margin: 1rem 0 .8rem; }
+    .theme-roadmap p { max-width: 78ch; color: var(--muted); font-size: 1rem; margin: .7rem 0 0; }
+    .theme-roadmap .theme-roadmap-limit { color: var(--ink); font-weight: 700; }
     .process { background: #e6eae0; }
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid #aab8ac; background: #aab8ac; }
     .step { background: var(--paper); padding: 1.7rem; min-height: 255px; }
@@ -773,6 +779,13 @@
           </article>
         </div>
         <p class="directions-note">These are identity concepts: real marks, palette ideas, and type choices. They are not screens from a finished RustMine interface.</p>
+        <aside class="theme-roadmap" id="theme-work" aria-labelledby="theme-work-title">
+          <div class="theme-roadmap-status"><span class="planned-mark">In preparation</span><time datetime="2026-10-19">19 October 2026&nbsp;UTC</time></div>
+          <h3 id="theme-work-title">Theme compatibility work is underway.</h3>
+          <p>The application work is queued after the current release gate while the three brand packages are prepared. The first required comparison will use Redmine 7.0.2’s own Default appearance and its unchanged Alternate and Classic themes on the same sample data and screens.</p>
+          <p>Once that baseline passes, Foundry, Clearline, and Common Ground will be made as additional themes through the same system. Separately installed Redmine themes will need their own checks.</p>
+          <p class="theme-roadmap-limit">No theme has reached the RustMine preview yet. A stylesheet loading alone does not establish compatibility.</p>
+        </aside>
       </div>
     </section>
 
