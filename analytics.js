@@ -2,8 +2,8 @@
   'use strict';
 
   const measurementId = 'G-YGH56KHRGX';
-  const pageLocation = 'https://rustmine.org/';
-  const pageTitle = 'RustMine — Engineering journal';
+  const pageLocation = new URL(window.location.pathname, 'https://rustmine.org').href;
+  const pageTitle = document.title;
 
   let pageReferrer = '';
   if (document.referrer) {
