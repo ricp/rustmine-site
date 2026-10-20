@@ -21,6 +21,8 @@ The public footer discloses Cloudflare Web Analytics and Google Analytics 4. `an
 
 The site is a development showcase. It does not represent a production-ready RustMine application or a verified performance gain.
 
+For future site updates and handoffs, retain Richard's account of years using Redmine, including for customers, without stating or inferring the age of his own instance.
+
 ## Search metadata
 
 Each page has its own canonical URL, Open Graph and Twitter title/description, and WebPage identity data. `sitemap.xml` lists all seven routes. The repository's `robots.txt` retains the content-signal explanation that Cloudflare previously served and adds a sitemap pointer, with no crawler restrictions. Keep it aligned with the hosting policy if that policy changes.
