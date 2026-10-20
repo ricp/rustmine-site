@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#102b27">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="The verified RustMine local preview and separate development-branch work, with dated results and limits.">
+  <link rel="canonical" href="https://rustmine.org/progress/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RustMine">
+  <meta property="og:url" content="https://rustmine.org/progress/">
+  <meta property="og:title" content="Progress | RustMine">
+  <meta property="og:description" content="The verified RustMine local preview and separate development-branch work, with dated results and limits.">
+  <meta property="og:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:secure_url" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Progress | RustMine">
+  <meta name="twitter:description" content="The verified RustMine local preview and separate development-branch work, with dated results and limits.">
+  <meta name="twitter:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta name="twitter:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <title>Progress | RustMine</title>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rustmine.org/#website",
+      "name": "RustMine",
+      "url": "https://rustmine.org/",
+      "description": "Richard Piacentini’s public engineering journal about an experimental rewrite of Redmine in Rust."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rustmine.org/progress/#webpage",
+      "url": "https://rustmine.org/progress/",
+      "name": "Progress | RustMine",
+      "description": "The verified RustMine local preview and separate development-branch work, with dated results and limits.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://rustmine.org/#website"
+      },
+      "author": {
+        "@id": "https://rustmine.org/#author"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rustmine.org/#author",
+      "name": "Richard Piacentini",
+      "sameAs": [
+        "https://www.linkedin.com/in/richardpiacentini/"
+      ]
+    }
+  ]
+}
+  </script>
+    <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand-lockup"><a class="brand" href="/" aria-label="RustMine home"><span class="brand-mark" aria-hidden="true"><span></span></span>RustMine<span style="color:var(--accent)">.</span></a><span class="header-snapshot">Snapshot <time datetime="2026-10-20T04:11:00Z">20 Oct 2026</time></span></div>
+      <nav class="site-nav desktop-nav" id="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/progress/" aria-current="page">Progress</a><a href="/screens/">Screens</a><a href="/method/">Method</a><a href="/journal/">Journal</a><a class="nav-contact" href="/#contact">Contact</a></nav>
+      <details class="mobile-menu" id="mobile-menu">
+        <summary><span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="site-nav mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/progress/" aria-current="page">Progress</a><a href="/screens/">Screens</a><a href="/method/">Method</a><a href="/journal/">Journal</a><a href="/design/">Design directions</a><a href="/privacy/">Privacy</a><a class="mobile-contact" href="/#contact">Contact</a></nav>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+<section class="build-timeline" id="build" aria-labelledby="build-title"><div class="wrap"><div class="build-head"><div><div class="eyebrow">Progress · 20 October 2026 UTC</div><h2 id="build-title">Integrated preview and development branch.</h2><p>Branch checks show work in progress; they do not move the integrated preview forward.</p></div></div><div class="build-latest"><div><span class="eyebrow">Latest integrated preview · 19 October 2026&nbsp;UTC</span><h3>Issue Status progress reached the local preview.</h3><p>Administrators can set default % Done values for Issue Statuses and choose status-based progress. Checked member Issue lists, details, editors and JSON/XML/CSV show effective progress immediately without changing stored Issue rows. An explicit recalculation saves values by status; an earlier status can remain updated if a later one fails, ready for retry. The exact-head gate passed 459/459 selected checks, followed by private-clone preflight and a guarded local preview switch. Other derived progress views and stored-column sorting or filtering, full Redmine compatibility and customer production use remain unverified.</p></div><div class="build-latest-total"><strong>58</strong><span>Non-merge commits</span></div></div><aside class="build-progress" aria-labelledby="branch-progress-title"><span class="eyebrow" id="branch-progress-title">Development branch · <time datetime="2026-10-20T12:19:47Z">20 October 2026 · 12:19:47 UTC</time></span><p>At pushed checkpoint <code>ded2bf04</code>, a signed Group membership removal journey passed bounded three-database, upstream Ruby and Default/Classic/Alternate browser checks. The earlier eight-editor audit also passed selected checks. These internal fixtures are not publication images or full stock visual acceptance. Wider Group, Custom Field and theme work remains open. <a href="/progress/#theme-status">See each theme’s state</a>. The integrated preview remains at <code>68cd7f1</code>.</p></aside><p><a href="/journal/#build-history">Read the full dated record</a> · <a href="/screens/#theme-members-demo">Watch the branch demo with its limits</a></p></div></section><section class="section" id="theme-status" aria-labelledby="theme-status-title"><div class="wrap"><div class="section-heading"><div><div class="eyebrow">Six theme choices · PM source <time datetime="2026-10-20T12:19:47Z">20 October 2026, 12:19:47 UTC</time></div><h2 id="theme-status-title">Theme work, one choice at a time.</h2></div><p>Selected checks on a separate branch are evidence of development, not an integrated release or full visual acceptance.</p></div><ul class="rule-list">
+<li><strong>Default</strong><span><b>Prepared:</b> pinned Redmine 7.0.2 core assets and selection handling on the development branch. <b>Branch validation:</b> selected three-database and browser journeys, including the latest Group removal scope. <b>Integrated:</b> the local preview uses its earlier blank, brand-neutral Default, not this branch’s stock-compatible system. <b>Gates:</b> full stock visual acceptance, combined release checks, private clone and guarded switch.</span></li>
+<li><strong>Classic</strong><span><b>Prepared:</b> unchanged Redmine 7.0.2 package embedded on the development branch. <b>Branch validation:</b> selected matched fixtures across English/Arabic and desktop/mobile, including the latest Group removal scope. <b>Integrated:</b> no. <b>Gates:</b> full stock visual acceptance and guarded release.</span></li>
+<li><strong>Alternate</strong><span><b>Prepared:</b> unchanged Redmine 7.0.2 package embedded on the development branch. <b>Branch validation:</b> the same selected matched-fixture scope as Classic. <b>Integrated:</b> no. <b>Gates:</b> full stock visual acceptance and guarded release.</span></li>
+<li><strong>Foundry</strong><span><b>Prepared:</b> external draft CSS, mark, local fonts and license notices. <b>Branch validation:</b> no app import or rendered pilot. <b>Integrated:</b> no. <b>Gates:</b> accepted stock themes first, then a reviewed branded pilot and wider rollout checks.</span></li>
+<li><strong>Clearline</strong><span><b>Prepared:</b> external draft CSS, mark, local fonts and license notices. <b>Branch validation:</b> no app import or rendered pilot. <b>Integrated:</b> no. <b>Gates:</b> accepted stock themes first, then a reviewed branded pilot and wider rollout checks.</span></li>
+<li><strong>Common Ground</strong><span><b>Prepared:</b> external draft CSS, mark, local fonts and license notices. <b>Branch validation:</b> no app import or rendered pilot. <b>Integrated:</b> no. <b>Gates:</b> accepted stock themes first, then a reviewed branded pilot and wider rollout checks.</span></li>
+</ul><p><a href="/screens/#theme-work">See the approved branch footage and fixture captures with their limits</a>.</p></div></section>
+<section class="section status" id="status" aria-labelledby="status-title">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="eyebrow">Local preview · <time datetime="2026-10-19T16:25:34Z">19 October 2026</time></div><h2 id="status-title">What already works.</h2></div><p>These are usable paths in a local Rust build. Each is a bounded part of Redmine, not full parity or a customer-ready installation.</p></div>
+        <div class="capability-grid">
+          <article class="capability"><h3>Projects and access</h3><p>Sign in and manage projects, members, roles, settings, and supported project copies.</p></article>
+          <article class="capability"><h3>Issues and planning</h3><p>Create and edit issues. Use queries, bulk actions, relations, and watchers, plus Calendar, Gantt, and roadmap views.</p></article>
+          <article class="capability"><h3>Time and reports</h3><p>Log and review time, use project reports and saved filters, and import supported CSV files.</p></article>
+          <article class="capability"><h3>Team content</h3><p>Use selected Wiki, Boards, News, Document, and attachment paths. Search and browse project activity.</p></article>
+          <article class="capability"><h3>Code and integrations</h3><p>Browse selected <a class="external-link" href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" aria-label="Git (opens in a new tab)" title="Opens in a new tab">Git</a> and <a class="external-link" href="https://subversion.apache.org/" target="_blank" rel="noopener noreferrer" aria-label="Subversion (opens in a new tab)" title="Opens in a new tab">Subversion</a> repositories and use covered API and webhook paths.</p></article>
+        </div>
+        <div class="status-limit"><h3>Still unfinished</h3><p>Complex copy and permission cases, some Wiki, feed, and repository behavior, wider Redmine parity, the finished interface, and release readiness remain.</p><p><strong>I have not measured a speed or hosting cost benefit</strong>, and this build is not for customer production.</p></div>
+      </div>
+    </section>
+  </main>
+<div class="screen-viewer" id="screen-viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" aria-describedby="viewer-description" hidden>
+    <div class="viewer-panel">
+      <div class="viewer-toolbar"><h2 id="viewer-title"></h2><div class="viewer-controls"><button type="button" id="viewer-fit" aria-label="Fit image to window">Fit</button><button type="button" id="viewer-minus" aria-label="Zoom out">−</button><output id="viewer-zoom" aria-live="polite">Fit</output><button type="button" id="viewer-plus" aria-label="Zoom in">+</button><button type="button" class="viewer-close" id="viewer-close" aria-label="Close image viewer">Close ×</button></div></div>
+      <div class="viewer-scroll" id="viewer-scroll" tabindex="0" aria-label="Scrollable full-resolution screenshot"><img id="viewer-image" alt=""></div>
+      <p class="viewer-caption" id="viewer-description"></p>
+    </div>
+  </div>
+<footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 20 October 2026</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="/privacy/">Privacy details</a>. · <a href="/design/">Design directions</a> · <a href="/">Home</a>.</p></div></footer>
+  <script src="/analytics.js" defer></script>
+  <script src="/site.js" defer></script>
+</body>
+</html>

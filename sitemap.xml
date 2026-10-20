@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://rustmine.org/</loc>
-  </url>
+  <url><loc>https://rustmine.org/</loc></url>
+  <url><loc>https://rustmine.org/progress/</loc></url>
+  <url><loc>https://rustmine.org/screens/</loc></url>
+  <url><loc>https://rustmine.org/method/</loc></url>
+  <url><loc>https://rustmine.org/journal/</loc></url>
+  <url><loc>https://rustmine.org/design/</loc></url>
+  <url><loc>https://rustmine.org/privacy/</loc></url>
 </urlset>
