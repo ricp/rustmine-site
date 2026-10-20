@@ -2,11 +2,11 @@
 
 This repository contains only the public RustMine engineering journal website. The RustMine application source is maintained separately.
 
-`index.html` is a dated 18 October 2026 engineering snapshot. Its screenshots, portrait, and styles are embedded. The favicon files and `analytics.js` are local static assets; the site needs no build pipeline.
+`index.html` is a dated engineering snapshot. Its screenshots, portrait, and styles are embedded. The favicon files and `analytics.js` are local static assets; the site needs no build pipeline.
 
 The favicon set uses the current site's orange square mark on deep forest green. `favicon.svg` is the vector master; the ICO, PNG, Apple touch icon, and `site.webmanifest` provide browser and home screen sizes. The three exploratory brand directions remain unchosen.
 
-`social-card.png` is the 1200×630 public link-preview image. It uses the current site mark and palette; Open Graph and Twitter metadata in `index.html` point to its absolute HTTPS URL.
+`social-card-2026-10-20.png` is the 1200×630 public link-preview image. It follows the site's current hero tagline, mark, palette, and font stacks; Open Graph and Twitter metadata in `index.html` point to its versioned absolute HTTPS URL. Its SHA-256 is `40c9d54ddcb237a38786af6a245d591b1a76c92727a40f8eb9fb418f4bd42b2b`. The older `social-card.png` remains available for existing cached links.
 
 ## Analytics
 
