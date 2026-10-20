@@ -320,6 +320,12 @@
     .theme-roadmap h3 { font: 500 clamp(1.6rem, 2.7vw, 2.2rem)/1.15 var(--serif); letter-spacing: -.035em; margin: 1rem 0 .8rem; }
     .theme-roadmap p { max-width: 78ch; color: var(--muted); font-size: 1rem; margin: .7rem 0 0; }
     .theme-roadmap .theme-roadmap-limit { color: var(--ink); font-weight: 700; }
+    .theme-demo { margin-top: 2rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
+    .theme-demo h4 { margin: 0 0 1rem; font: 500 clamp(1.35rem, 2vw, 1.8rem)/1.2 var(--serif); letter-spacing: -.025em; }
+    .theme-demo figure { width: min(100%, 900px); margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .theme-demo video { display: block; width: 100%; height: auto; aspect-ratio: 1280 / 900; background: var(--forest-deep); }
+    .theme-demo figcaption { padding: 1rem 1.1rem 1.2rem; color: var(--muted); font-size: .95rem; line-height: 1.55; }
+    .theme-demo figcaption strong { color: var(--ink); }
     .theme-capture-set { margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
     .theme-capture-set h4 { margin: 0; font: 500 clamp(1.35rem, 2vw, 1.8rem)/1.2 var(--serif); letter-spacing: -.025em; }
     .theme-capture-set > p { margin: .55rem 0 0; }
@@ -833,6 +839,16 @@
           <p>The verified development-branch checkpoint <code>c02580ef</code> (20 October, 09:54&nbsp;UTC) adds generated passwords, requested account-information mail and selected User preferences. An encrypted, authenticated RustMine queue holds pending credential mail, supports retry and cancels stale credentials. Exact-head evidence records 411 Rust tests, 42 selected PASS groups across original-schema SQLite, PostgreSQL and MySQL, 11 unchanged upstream Rails tests with 61 assertions, and 60 internal browser states across Default, Classic and Alternate. A separate verified <code>692f7739</code> checkpoint covers the User Emails dialog. Earlier verified checkpoints cover Project Members (<code>9e8cdf95</code>), Project description (<code>c80290f3</code>) and User Groups (<code>489b7c2a</code>). Fixture rows were restored; original Redmine table definitions were unchanged. These are selected checks, not a full compatibility gate.</p>
           <p>Selected stock screens have been compared on disposable fixtures, including the earlier Tracker and Workflow captures below. Full stock visual acceptance is still open. Project Members search is bounded to its first 100 candidates plus retained selection; expired sudo loses the current form selection. User Groups editing covers ordinary givable groups, and Project description Help and some code-language choices remain incomplete. User Emails uses a native dialog rather than Rails UJS; external mail delivery and every downstream default-query consumer are unverified. Earlier Issue Diff is limited to selected visible text changes; embedded PDF visual rendering remains unaccepted. Broader Issue and administration layouts, combined release checks, private-clone preflight and a guarded preview switch remain open. Foundry, Clearline and Common Ground are prepared candidate packages outside the application, not integrated product views.</p>
           <p class="theme-roadmap-limit">This development-branch work has not reached the RustMine preview. These commits are excluded from the integrated chart; selected checks do not establish full Redmine theme compatibility.</p>
+          <section class="theme-demo" id="theme-members-demo" aria-labelledby="theme-members-demo-title">
+            <h4 id="theme-members-demo-title">Project members, in English and Arabic</h4>
+            <figure>
+              <video controls playsinline preload="none" poster="assets/theme-work/project-members-en-ar-9e8cdf95-2026-10-20-poster.png" width="1280" height="900" aria-labelledby="theme-members-demo-title" aria-describedby="theme-members-demo-caption">
+                <source src="assets/theme-work/project-members-en-ar-9e8cdf95-2026-10-20.mp4" type="video/mp4">
+                Your browser cannot play this video. <a href="assets/theme-work/project-members-en-ar-9e8cdf95-2026-10-20.mp4">Download the 29-second MP4</a>.
+              </video>
+              <figcaption id="theme-members-demo-caption"><strong>Development branch · fixture data · not integrated.</strong> A silent, real-browser recording of Project → Settings → Members in blank Default, showing the same synthetic member added as Developer in separate English left-to-right and Arabic right-to-left sessions. Captured 20 October 2026 at 10:14–10:15&nbsp;UTC on pinned branch checkpoint <code>9e8cdf95</code>, at 1280 × 900. The Arabic modal heading is clipped around 00:19–00:23, and some tabs and role names remain in English. This does not establish complete translation or stock-theme acceptance.</figcaption>
+            </figure>
+          </section>
           <section class="theme-capture-set" aria-labelledby="theme-trackers-title">
             <h4 id="theme-trackers-title">One Tracker screen, three stock appearances</h4>
             <p>Direct, unaltered RustMine development-branch captures of the same Tracker field summary after a saved update. Each uses disposable fixture data, English, and a 1280px viewport. Open an image to inspect it at full resolution.</p>
