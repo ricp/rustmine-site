@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Rustmine Common Ground mark</title>
+  <desc id="desc">Two rising paths above a shared horizon, with a clay-colored point of focus.</desc>
+  <path d="M6 38 24 20l12 12 10-10 12 12" fill="none" stroke="#244e44" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 49c14-8 26-8 50 0" fill="none" stroke="#b54e32" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="25" cy="18" r="4" fill="#b54e32"/>
+</svg>
