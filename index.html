@@ -156,7 +156,12 @@
     .build-intent { padding: 1.25rem 1.4rem; border: 1px solid #739789; border-left: 4px solid var(--accent); background: #274f43; }
     .build-intent p { font: 500 clamp(1.25rem, 2vw, 1.6rem)/1.3 var(--serif); letter-spacing: -.025em; margin: 0 0 .6rem; }
     .build-intent small { color: #c9ddd0; font-size: .9rem; }
+    .build-progress { margin: 2.3rem 0 1.2rem; padding: 1.2rem 1.8rem; border-left: 4px solid var(--mint); background: var(--paper); color: var(--ink); }
+    .build-progress .eyebrow { color: #315f4a; }
+    .build-progress p { max-width: 90ch; margin: .35rem 0 0; color: var(--muted); }
+    .build-progress a { color: var(--forest); font-weight: 700; }
     .build-latest { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin: 2.3rem 0 1.2rem; padding: 1.5rem 1.8rem; border-top: 4px solid var(--accent); background: var(--paper); color: var(--ink); }
+    .build-progress + .build-latest { margin-top: 0; }
     .build-latest .eyebrow { color: #9a4c2f; }
     .build-latest h3 { max-width: 800px; font: 500 clamp(1.5rem, 2.5vw, 2.4rem)/1.14 var(--serif); letter-spacing: -.035em; margin: .4rem 0 .5rem; }
     .build-latest p { color: var(--muted); font-size: 1rem; margin: 0; }
@@ -632,6 +637,7 @@
           <div><div class="eyebrow">Build journal</div><h2 id="build-title">The build, day by day.</h2><p>The chart records integrated Git activity by UTC day. The notes pick out selected changes in the verified local build; development-branch work is identified separately.</p></div>
           <aside class="build-intent" aria-label="Richard's publishing commitment"><p>I will publish an update every day until completion.</p><small>This is a dated snapshot, not a live feed.</small></aside>
         </div>
+        <aside class="build-progress" aria-labelledby="build-progress-title"><span class="eyebrow" id="build-progress-title">Latest project update · <time datetime="2026-10-20T04:11:00Z">20 October 2026&nbsp;UTC</time></span><p>Stock-theme compatibility is in development on a separate branch: 22 non-merge commits through 04:09&nbsp;UTC, with selected checks passed. <a href="#theme-work">Read the dated development update</a>. This work is not in the integrated preview below.</p></aside>
         <div class="build-latest"><div><span class="eyebrow">Latest integrated preview · 19 October 2026&nbsp;UTC</span><h3>Issue Status progress reached the local preview.</h3><p>Administrators can set default % Done values for Issue Statuses and choose status-based progress. Checked member Issue lists, details, editors and JSON/XML/CSV show effective progress immediately without changing stored Issue rows. An explicit recalculation saves values by status; an earlier status can remain updated if a later one fails, ready for retry. The exact-head gate passed 459/459 selected checks, followed by private-clone preflight and a guarded local preview switch. Other derived progress views and stored-column sorting or filtering, full Redmine compatibility and customer production use remain unverified.</p></div><div class="build-latest-total"><strong>58</strong><span>Non-merge commits</span></div></div>
         <figure class="build-chart" aria-labelledby="build-chart-title">
           <figcaption><strong id="build-chart-title">Git commits per day</strong><span>Excluding merges · 11–19 October 2026&nbsp;·&nbsp;UTC</span></figcaption>
