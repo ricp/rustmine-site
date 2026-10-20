@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#102b27">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="Why Richard is rebuilding Redmine in Rust, how he checks behavior and data, and which outcomes remain unmeasured.">
+  <link rel="canonical" href="https://rustmine.org/method/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RustMine">
+  <meta property="og:url" content="https://rustmine.org/method/">
+  <meta property="og:title" content="Method | RustMine">
+  <meta property="og:description" content="Why Richard is rebuilding Redmine in Rust, how he checks behavior and data, and which outcomes remain unmeasured.">
+  <meta property="og:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:secure_url" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Method | RustMine">
+  <meta name="twitter:description" content="Why Richard is rebuilding Redmine in Rust, how he checks behavior and data, and which outcomes remain unmeasured.">
+  <meta name="twitter:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta name="twitter:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <title>Method | RustMine</title>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rustmine.org/#website",
+      "name": "RustMine",
+      "url": "https://rustmine.org/",
+      "description": "Richard Piacentini’s public engineering journal about an experimental rewrite of Redmine in Rust."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rustmine.org/method/#webpage",
+      "url": "https://rustmine.org/method/",
+      "name": "Method | RustMine",
+      "description": "Why Richard is rebuilding Redmine in Rust, how he checks behavior and data, and which outcomes remain unmeasured.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://rustmine.org/#website"
+      },
+      "author": {
+        "@id": "https://rustmine.org/#author"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rustmine.org/#author",
+      "name": "Richard Piacentini",
+      "sameAs": [
+        "https://www.linkedin.com/in/richardpiacentini/"
+      ]
+    }
+  ]
+}
+  </script>
+    <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand-lockup"><a class="brand" href="/" aria-label="RustMine home"><span class="brand-mark" aria-hidden="true"><span></span></span>RustMine<span style="color:var(--accent)">.</span></a><span class="header-snapshot">Snapshot <time datetime="2026-10-20T04:11:00Z">20 Oct 2026</time></span></div>
+      <nav class="site-nav desktop-nav" id="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/progress/">Progress</a><a href="/screens/">Screens</a><a href="/method/" aria-current="page">Method</a><a href="/journal/">Journal</a><a class="nav-contact" href="/#contact">Contact</a></nav>
+      <details class="mobile-menu" id="mobile-menu">
+        <summary><span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="site-nav mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/progress/">Progress</a><a href="/screens/">Screens</a><a href="/method/" aria-current="page">Method</a><a href="/journal/">Journal</a><a href="/design/">Design directions</a><a href="/privacy/">Privacy</a><a class="mobile-contact" href="/#contact">Contact</a></nav>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+<section class="section" aria-label="Why I started RustMine"><div class="wrap hero-origin" id="story" aria-labelledby="story-title">
+        <div class="hero-origin-heading">
+          <div class="eyebrow">Why I started</div>
+          <h2 id="story-title">I love Redmine. I also want it to be faster.</h2>
+        </div>
+        <div class="hero-origin-grid">
+          <div class="hero-origin-block">
+            <h3>Years of real work</h3>
+            <p>I’ve been working with <a class="external-link" href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" aria-label="Ruby on Rails (opens in a new tab)" title="Opens in a new tab">Ruby on Rails</a> since 2005, and I still use it today. I’ve used <a class="external-link" href="https://www.redmine.org/" target="_blank" rel="noopener noreferrer" aria-label="Redmine (opens in a new tab)" title="Opens in a new tab">Redmine</a> since <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Changelog_0_6#v040-2007-01-02" target="_blank" rel="noopener noreferrer" aria-label="Redmine version 0.4.0 changelog (opens in a new tab)" title="Opens in a new tab">version 0.4.0</a>, released on 2 January 2007. I like both. I use Redmine to manage real projects for myself and customers, so I know what a rewrite could lose if it gets the details wrong.</p>
+            <p>Performance is one reason I started RustMine. I’m rebuilding Redmine’s core in <a class="external-link" href="https://rust-lang.org/" target="_blank" rel="noopener noreferrer" aria-label="Rust (opens in a new tab)" title="Opens in a new tab">Rust</a> to find out whether it can run faster and use fewer resources, while keeping the behavior and existing data people rely on.</p>
+            <p><strong>This year, my hosting costs have almost doubled for the same service.</strong> I’m not paying for more resources. I’m paying more for what I already had.</p>
+            <p>Some of my customers have worked with me for over a decade. I built their Ruby on Rails applications over those years, and they are feeling the pressure of hosting costs too. I feel responsible for exploring whether I can help.</p>
+          </div>
+          <div class="hero-origin-block">
+            <h3>An experiment to measure</h3>
+            <p>RustMine gives me a substantial project on which to measure what changes when the same work runs in a Rust implementation. I do not have those measurements yet, so I cannot promise lower costs or offer a migration path. I want to find out what the evidence supports.</p>
+            <h3>How the work evolved</h3>
+            <p>I wanted a feature-based rewrite from the beginning. We started with small experiments around Redmine’s tests, its database, and a few <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Rest_api" target="_blank" rel="noopener noreferrer" aria-label="API calls (opens in a new tab)" title="Opens in a new tab">API calls</a>. That gave us a way to check our work, but progress felt slow.</p>
+            <p>We then made the work items larger and more useful: not just reading an issue category, but completing a task such as creating an issue or copying a project. <strong>The tests stayed.</strong> What changed was what we asked the agents to build next.</p>
+            <p class="hero-origin-coda">RustMine is my private experiment, not a customer commission or a product I can offer today. I have not decided whether to release the source.</p>
+          </div>
+        </div>
+      </div></section><div class="evidence-band">
+        <div class="wrap evidence-single">
+          <strong class="evidence-value" id="days-since-start">9</strong>
+          <div><span class="evidence-label">Days since starting</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time id="first-commit-date" datetime="2026-10-11T05:46:22Z">11 October 2026</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-20T04:11:00Z">20 October 2026</time></dd></div></dl><p class="evidence-definition">Counted by UTC calendar date, not days worked. The snapshot dates the project evidence.</p></div>
+        </div>
+      </div><section class="section" id="database" aria-labelledby="database-title">
+      <div class="wrap db-panel">
+        <div class="db-panel-lead">
+          <div class="eyebrow">The promise I’m testing</div>
+          <h2 id="database-title">Keep the data.<br><span>Change the application.</span></h2>
+          <p>RustMine is designed to work with an existing Redmine core database. The goal is to keep your project history and data, without migrating them to a new system.</p>
+        </div>
+        <div class="db-panel-side">
+          <h3>What I’ve checked so far</h3>
+          <p>I compare specific tasks with <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2</a> on <a class="external-link" href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" aria-label="SQLite (opens in a new tab)" title="Opens in a new tab">SQLite</a>, <a class="external-link" href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" aria-label="PostgreSQL (opens in a new tab)" title="Opens in a new tab">PostgreSQL</a>, and <a class="external-link" href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" aria-label="MySQL (opens in a new tab)" title="Opens in a new tab">MySQL</a>.</p>
+          <ul class="rule-list">
+            <li><strong>The rule</strong><span>Leave Redmine’s original tables and the record of changes to them alone. RustMine can add tables of its own.</span></li>
+            <li><strong>Today</strong><span>Many Redmine features still need work. I would not replace a live customer installation with this build. <a class="external-link" href="https://www.redmine.org/plugins" target="_blank" rel="noopener noreferrer" aria-label="Plugins (opens in a new tab)" title="Opens in a new tab">Plugins</a> are outside the first version I’m aiming for.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section><section class="section team" id="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="eyebrow">Me and three agents</div><h2 id="team-title">Who does what, and who decides.</h2></div><p>One agent reviews the work, one builds it, and one explores its identity. I direct the project and make the final decisions.</p></div>
+        <div class="team-owner"><div class="eyebrow">Direction / accountability</div><div><h3>Richard Piacentini</h3><p>I choose what to build, review what the agents produce, and decide when the evidence is strong enough to move forward. I also decide whether a visual direction belongs in the product.</p></div></div>
+        <div class="team-lanes">
+          <article class="team-lane"><div><span class="lane-label">01 / review</span><h3>Project manager</h3></div><p>The PM reviews the builder’s work against Redmine and reports what is working, what remains partial, and what needs another look.</p></article>
+          <article class="team-lane"><div><span class="lane-label">02 / implementation</span><h3>Build agent</h3></div><p>The builder studies a Redmine task, builds its Rust version, and compares what both applications do with the same sample data.</p></article>
+          <article class="team-lane"><div><span class="lane-label">03 / brand exploration</span><h3>Brand designer</h3></div><p>The designer created Foundry, Clearline, and Common Ground: three possible identities with marks, colors, and typography. I have not chosen one or applied it to the product.</p></article>
+        </div>
+        <div class="team-foot"><img src="/assets/site/portrait-richard.jpg" alt="Portrait of Richard Piacentini" width="88" height="88"><div><p>I keep the team small. Agent count is not the goal.</p><strong>I’m the bottleneck. That’s a feature.</strong></div></div>
+      </div>
+    </section><section class="section process" id="method" aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="eyebrow">How I check the work</div><h2 id="method-title">Compare the feature.<br>Test the behavior.</h2></div><p><a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Features" target="_blank" rel="noopener noreferrer" aria-label="Redmine (opens in a new tab)" title="Opens in a new tab">Redmine</a> is the reference. For each task we rebuild, I want to know what a person can do in Redmine and whether RustMine does the same thing.</p></div>
+        <div class="steps">
+          <article class="step"><div class="number">01</div><h3>Understand the task</h3><p>Read the Redmine 7.0.2 code and try the task: what does the user see, who is allowed to do it, and what data changes?</p></article>
+          <article class="step"><div class="number">02</div><h3>Run Redmine’s tests</h3><p>Use the relevant original Ruby tests to find details that a feature description might miss.</p></article>
+          <article class="step"><div class="number">03</div><h3>Try it in both apps</h3><p>Give <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Guide" target="_blank" rel="noopener noreferrer" aria-label="Redmine (opens in a new tab)" title="Opens in a new tab">Redmine</a> and RustMine matching sample data. Compare the pages, permissions, files, and saved results.</p></article>
+          <article class="step"><div class="number">04</div><h3>Review the result</h3><p>Check the covered behavior, permissions, and saved data across the supported databases before I accept the change.</p></article>
+        </div>
+        <div class="architecture-note">
+          <h3 id="architecture-title">Features and architecture</h3>
+          <p>Redmine gets a lot done through <a class="external-link" href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" aria-label="Ruby on Rails (opens in a new tab)" title="Opens in a new tab">Rails</a>. Its application code is only part of the implementation. Rails supplies capabilities that do not appear when you count Redmine’s own source lines.</p>
+          <p>With RustMine, I’m trying to reproduce <strong>the features and behavior people rely on</strong>, including how their data and permissions work. I’m not trying to reproduce Redmine’s Ruby and Rails architecture. Rebuilding Rails just to rebuild Redmine would miss the point.</p>
+          <p>RustMine has Rust dependencies too, and a different architecture changes where implementation code lives. That does not mean every additional line is justified. A raw application line count is a poor scorecard. <strong>Completeness needs tested workflows. Efficiency needs a fair measurement.</strong> Neither comes from counting lines.</p>
+        </div>
+      </div>
+    </section><section class="section maintenance" id="maintenance" aria-labelledby="maintenance-title">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="maintenance-head"><span class="eyebrow">After the first port</span><span class="planned-mark">My plan</span></div><h2 id="maintenance-title">Then I have to maintain it.</h2></div><p>Redmine will keep changing. If this rewrite works, RustMine will need to follow those changes deliberately.</p></div>
+        <div class="maintenance-grid">
+          <ol class="maintenance-flow">
+            <li><span class="maintenance-step-content">Follow <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine releases (opens in a new tab)" title="Opens in a new tab">Redmine releases</a> and <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Security_Advisories" target="_blank" rel="noopener noreferrer" aria-label="security notices (opens in a new tab)" title="Opens in a new tab">security notices</a>. Work that has not shipped can be a clue, but it is not a change to copy yet.</span></li>
+            <li><span class="maintenance-step-content">For each release, find the changes users will notice and check whether they affect permissions, files, or saved data.</span></li>
+            <li><span class="maintenance-step-content">Add tests for those changes, then update RustMine’s behavior where needed.</span></li>
+            <li><span class="maintenance-step-content">Review the result, test it with the supported databases, and check existing data before making a RustMine release.</span></li>
+          </ol>
+          <aside class="maintenance-aside"><h3>Watch regularly. Ship deliberately.</h3><p>I would review security fixes quickly, but a new Redmine change should not automatically change RustMine. Surprise software updates are rarely anyone’s favorite kind of surprise.</p></aside>
+        </div>
+      </div>
+    </section><!-- upstream-watch:start; refresh contract: docs/UPSTREAM_WATCH_REFRESH.md -->
+<section class="section upstream-watch" id="upstream-watch" aria-labelledby="upstream-watch-title">
+      <div class="wrap">
+        <div class="upstream-top">
+          <div>
+            <div class="eyebrow">After the first port / Source watch</div>
+            <h2 id="upstream-watch-title">Keeping up with Redmine.</h2>
+            <p class="upstream-intro">RustMine is built against Redmine 7.0.2. This watch keeps later upstream changes separate from the work needed to review and release them in RustMine.</p>
+          </div>
+          <div class="upstream-checked"><span>Research snapshot</span><time datetime="2026-10-20T11:51:59Z">20 October 2026<br>11:51:59 UTC</time></div>
+        </div>
+        <div class="upstream-grid">
+          <article class="upstream-card observed">
+            <span class="upstream-state">01 / Seen upstream</span>
+            <h3>Committed after 7.0.2</h3>
+            <p>The register holds 83 distinct post-7.0.2 commits: 69 on trunk and 14 on 7.0-stable. Six trunk commits and no stable commits are new since the previous check. These selected examples link to official issues and revisions or community mirror commits. Redmine 7.0.2 remains the latest published 7.0 release.</p>
+            <div class="upstream-item"><strong>Uploaded user avatars</strong><small>Trunk r25279–r25282 · one feature group · targeted to unreleased 7.1.0</small><p>Four commits add attachment-backed uploads, self-service and administrator controls, square thumbnails, API avatar URLs, a <code>users.avatar_id</code> migration, documentation and translations. <a href="https://www.redmine.org/issues/12197" target="_blank" rel="noopener noreferrer" aria-label="Official Redmine uploaded avatars issue (opens in a new tab)" title="Opens in a new tab">Official issue </a> · <a href="https://www.redmine.org/projects/redmine/repository/svn/revisions/25279" target="_blank" rel="noopener noreferrer" aria-label="Uploaded avatars official revision r25279 (opens in a new tab)" title="Opens in a new tab">First revision </a></p></div>
+            <div class="upstream-item"><strong>Gantt resize redraws reduced</strong><small>Trunk r25283 · targeted to unreleased 7.1.0</small><p>Upstream avoids unnecessary relation and progress-line redraws when the window is resized. <a href="https://www.redmine.org/issues/44637" target="_blank" rel="noopener noreferrer" aria-label="Official Redmine Gantt resize issue (opens in a new tab)" title="Opens in a new tab">Official issue </a> · <a href="https://www.redmine.org/projects/redmine/repository/svn/revisions/25283" target="_blank" rel="noopener noreferrer" aria-label="Gantt resize official revision r25283 (opens in a new tab)" title="Opens in a new tab">Revision </a></p></div>
+            <div class="upstream-item"><strong>Theme-aware image preview background</strong><small>Trunk r25284 · targeted to unreleased 7.1.0</small><p>A CSS checkerboard replaces the fixed transparency tile in image previews. <a href="https://www.redmine.org/issues/44626" target="_blank" rel="noopener noreferrer" aria-label="Official Redmine image preview issue (opens in a new tab)" title="Opens in a new tab">Official issue </a> · <a href="https://www.redmine.org/projects/redmine/repository/svn/revisions/25284" target="_blank" rel="noopener noreferrer" aria-label="Image preview official revision r25284 (opens in a new tab)" title="Opens in a new tab">Revision </a></p></div>
+            <div class="upstream-item"><strong>Working-day rescheduling corrected</strong><small>Trunk r25277 and r25278 · unreleased; not on 7.0-stable at this check</small><p>Two linked fixes address calculations when an Issue starts on a non-working day. <a href="https://github.com/redmine/redmine/commit/9fcd0259f08128596b7947e1959857029a51cb28" target="_blank" rel="noopener noreferrer" aria-label="Working-day calculation mirror commit r25277 (opens in a new tab)" title="Opens in a new tab">r25277 </a> · <a href="https://github.com/redmine/redmine/commit/bf6dc70972bdb955e8138371a1d8a4118bf56037" target="_blank" rel="noopener noreferrer" aria-label="Issue rescheduling mirror commit r25278 (opens in a new tab)" title="Opens in a new tab">r25278 </a></p></div>
+            <div class="upstream-item"><strong>Atomic thumbnail generation</strong><small>Trunk r25268 and 7.0-stable backport r25276 · unreleased</small><p>Thumbnail output is moved into place after generation succeeds, so partial files are not served. This is one behavior with two branch commits. <a href="https://github.com/redmine/redmine/commit/210db64f8d45d5281a497db5f9643ff85a05e34d" target="_blank" rel="noopener noreferrer" aria-label="Atomic thumbnail trunk mirror commit (opens in a new tab)" title="Opens in a new tab">Trunk </a> · <a href="https://github.com/redmine/redmine/commit/51e989bc198338f26849aa6e054e00d2e4f711b8" target="_blank" rel="noopener noreferrer" aria-label="Atomic thumbnail stable mirror commit (opens in a new tab)" title="Opens in a new tab">Stable </a></p></div>
+            <div class="upstream-item"><strong>Gantt collapse respects hidden projects</strong><small>Trunk r25275 · unreleased; not on 7.0-stable at this check</small><p>A collapsed project now uses the nearest displayed ancestor when an intermediate project is not visible. <a href="https://github.com/redmine/redmine/commit/77ddc60b1539c2970d562cb37b6c318c0566b8dc" target="_blank" rel="noopener noreferrer" aria-label="Gantt visibility mirror commit (opens in a new tab)" title="Opens in a new tab">Read the mirror commit </a></p></div>
+            <div class="upstream-item"><strong>Email changes revoke login tokens</strong><small>7.0-stable backport · unreleased at this check</small><p><a href="https://github.com/redmine/redmine/commit/a1b9c09eeda30c2546057f53010ba95abdb2d57f" target="_blank" rel="noopener noreferrer" aria-label="Email-change token fix mirror commit (opens in a new tab)" title="Opens in a new tab">Read the mirror commit </a></p></div>
+            <div class="upstream-item"><strong>Named non-working dates</strong><small>Trunk commit · not in Redmine 7.0.2</small><p><a href="https://github.com/redmine/redmine/commit/b948e0b3482a7da6ee76cf25d11ca12661963491" target="_blank" rel="noopener noreferrer" aria-label="Named non-working dates mirror commit (opens in a new tab)" title="Opens in a new tab">Read the mirror commit </a></p></div>
+          </article>
+          <article class="upstream-card">
+            <span class="upstream-state">02 / For RustMine review</span>
+            <h3>Decisions before code</h3>
+            <p>These changes have been flagged for closer comparison. A review item is not a commitment to implement it.</p>
+            <div class="upstream-item"><strong>Avatar data, files and permissions</strong><p>Compare the new schema and upload lifecycle with RustMine’s original-data contract; review thumbnail serving, privacy, administrator and self-service permissions, and API URLs before choosing a compatibility target.</p></div>
+            <div class="upstream-item"><strong>Gantt resize behavior</strong><p>Compare the same resize states in Redmine and RustMine, then measure redraw and responsiveness if this becomes an implementation candidate. No RustMine speed result is established.</p></div>
+            <div class="upstream-item"><strong>Image-preview themes</strong><p>Check transparent image previews across supported themes and viewports before deciding whether the new checkerboard behavior belongs in RustMine.</p></div>
+            <div class="upstream-item"><strong>Working-day calculations</strong><p>Compare non-working start dates and Issue rescheduling with the pinned 7.0.2 behavior before selecting a future compatibility target.</p></div>
+            <div class="upstream-item"><strong>Thumbnail file integrity</strong><p>Check RustMine’s thumbnail file and failure paths against the upstream atomic-write behavior; the stable backport is still unreleased.</p></div>
+            <div class="upstream-item"><strong>Gantt visibility boundaries</strong><p>Review collapse links and hidden intermediate projects with a non-admin fixture before making a parity decision.</p></div>
+            <div class="upstream-item"><strong>Email changes revoke login tokens</strong><p>Compare email-change token handling with RustMine’s account and session behavior.</p></div>
+            <div class="upstream-item"><strong>Named non-working dates</strong><p>Check how non-working dates would affect the original-data contract before choosing an approach.</p></div>
+          </article>
+          <article class="upstream-card integrated">
+            <span class="upstream-state">03 / Verified in RustMine</span>
+            <h3>No adoption recorded yet</h3>
+            <p>No post-7.0.2 change from this watch has a verified RustMine integration at this check.</p>
+            <p>RustMine’s integrated local preview still uses the pinned 7.0.2 baseline. Later upstream changes need their own comparison and release evidence before appearing here.</p>
+          </article>
+        </div>
+        <div class="upstream-foot">
+          <p><span class="upstream-source-label">How to read this</span>A change may appear on both trunk and a stable branch. This view follows the behavior once and marks where it was seen. At the research scan, official SVN directory browsing lagged behind the newer revisions cited by official issue pages and recorded in the community mirror; a later directory read showed r25284. The register covers commit file lists, with selected diffs reviewed; the scan did not review every open issue or run Redmine or RustMine tests. Seen upstream does not mean released by Redmine or integrated into RustMine.</p>
+          <a href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 baseline (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2 baseline </a>
+        </div>
+      </div>
+    </section>
+<!-- upstream-watch:end --><section class="section measure" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="wrap measure-grid">
+        <div><div class="eyebrow">The resource question</div><h2 id="benchmark-title">Less hosting cost?<br><em>Prove it first.</em></h2><p>I want to know whether RustMine can handle the same work faster or with less memory. That might reduce hosting cost, but I have not run a fair comparison yet. <strong>I cannot claim a speedup or savings.</strong></p></div>
+        <div class="benchmark-card"><header><strong>How I would compare them</strong></header><ul><li>Give Redmine and RustMine the same data and the same everyday tasks.</li><li>Run them on comparable computers and expect the same quality of service.</li><li>Measure response time, how much work they handle, memory use, and hosting cost.</li></ul><p>Choosing a faster language starts the experiment. It does not finish it.</p></div>
+      </div>
+    </section><section class="section cost" id="cost" aria-labelledby="cost-title">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="eyebrow">Tools behind the work</div><h2 id="cost-title">What I use to build it.</h2></div><p>For this experiment, I use <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> and a dedicated <a class="external-link" href="https://www.apple.com/mac-mini/" target="_blank" rel="noopener noreferrer" aria-label="Mac mini (opens in a new tab)" title="Opens in a new tab">Mac mini</a>. I keep the engineering decisions and review in my own hands.</p></div>
+        <div class="cost-grid">
+          <div class="cost-item"><h3>Codex subscription</h3><strong>$200 monthly plan</strong><p>I use OpenAI’s $200 monthly plan for RustMine and my other projects. That is the subscription price, not a cost dedicated to RustMine.</p></div>
+          <div class="cost-item"><h3>Dedicated hardware</h3><strong>Mac mini</strong><p>I bought a 16 GB / 512 GB Mac mini for the experiment.</p></div>
+        </div>
+        <div class="cost-after"><p>One reason I started RustMine was to try <a class="external-link" href="https://openai.com/" target="_blank" rel="noopener noreferrer" aria-label="OpenAI (opens in a new tab)" title="Opens in a new tab">OpenAI</a>’s <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6 Sol</a> and <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6.1-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6.1 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6.1 Sol</a> on an application I know well, using <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> straight out of the box without a custom configuration.</p><p>My job remains to understand the work, review its evidence, and decide what belongs in the product. I have not calculated the total cost of this experiment.</p></div>
+      </div>
+    </section>
+  </main>
+<div class="screen-viewer" id="screen-viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" aria-describedby="viewer-description" hidden>
+    <div class="viewer-panel">
+      <div class="viewer-toolbar"><h2 id="viewer-title"></h2><div class="viewer-controls"><button type="button" id="viewer-fit" aria-label="Fit image to window">Fit</button><button type="button" id="viewer-minus" aria-label="Zoom out">−</button><output id="viewer-zoom" aria-live="polite">Fit</output><button type="button" id="viewer-plus" aria-label="Zoom in">+</button><button type="button" class="viewer-close" id="viewer-close" aria-label="Close image viewer">Close ×</button></div></div>
+      <div class="viewer-scroll" id="viewer-scroll" tabindex="0" aria-label="Scrollable full-resolution screenshot"><img id="viewer-image" alt=""></div>
+      <p class="viewer-caption" id="viewer-description"></p>
+    </div>
+  </div>
+<footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 20 October 2026</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="/privacy/">Privacy details</a>. · <a href="/design/">Design directions</a> · <a href="/">Home</a>.</p></div></footer>
+  <script src="/analytics.js" defer></script>
+  <script src="/site.js" defer></script>
+</body>
+</html>
