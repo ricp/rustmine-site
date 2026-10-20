@@ -619,8 +619,8 @@
       </div>
       <div class="evidence-band">
         <div class="wrap evidence-single">
-          <strong class="evidence-value" id="days-since-start">8</strong>
-          <div><span class="evidence-label">Days since starting</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time id="first-commit-date" datetime="2026-10-11T05:46:22Z">11 October 2026</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-19T16:25:34Z">19 October 2026</time></dd></div></dl><p class="evidence-definition">Counted by UTC calendar date, not days worked. The snapshot dates the project evidence.</p></div>
+          <strong class="evidence-value" id="days-since-start">9</strong>
+          <div><span class="evidence-label">Days since starting</span><dl class="evidence-dates"><div><dt>First commit</dt><dd><time id="first-commit-date" datetime="2026-10-11T05:46:22Z">11 October 2026</time></dd></div><div><dt>Snapshot</dt><dd><time datetime="2026-10-20T04:11:00Z">20 October 2026</time></dd></div></dl><p class="evidence-definition">Counted by UTC calendar date, not days worked. The snapshot dates the project evidence.</p></div>
         </div>
       </div>
       <div class="wrap hero-tail"><span>Personal experiment · private source</span><span>Built around existing Redmine data</span><span>No speed result yet</span></div>
@@ -629,7 +629,7 @@
     <section class="build-timeline" id="build" aria-labelledby="build-title">
       <div class="wrap">
         <div class="build-head">
-          <div><div class="eyebrow">Build journal</div><h2 id="build-title">The build, day by day.</h2><p>The chart records Git activity by UTC day. The notes pick out selected changes that are now in the verified local build.</p></div>
+          <div><div class="eyebrow">Build journal</div><h2 id="build-title">The build, day by day.</h2><p>The chart records integrated Git activity by UTC day. The notes pick out selected changes in the verified local build; development-branch work is identified separately.</p></div>
           <aside class="build-intent" aria-label="Richard's publishing commitment"><p>I will publish an update every day until completion.</p><small>This is a dated snapshot, not a live feed.</small></aside>
         </div>
         <div class="build-latest"><div><span class="eyebrow">Latest integrated preview · 19 October 2026&nbsp;UTC</span><h3>Issue Status progress reached the local preview.</h3><p>Administrators can set default % Done values for Issue Statuses and choose status-based progress. Checked member Issue lists, details, editors and JSON/XML/CSV show effective progress immediately without changing stored Issue rows. An explicit recalculation saves values by status; an earlier status can remain updated if a later one fails, ready for retry. The exact-head gate passed 459/459 selected checks, followed by private-clone preflight and a guarded local preview switch. Other derived progress views and stored-column sorting or filtering, full Redmine compatibility and customer production use remain unverified.</p></div><div class="build-latest-total"><strong>58</strong><span>Non-merge commits</span></div></div>
@@ -646,7 +646,7 @@
             <a class="build-chart-day" data-zero="false" href="#build-day-2026-10-18" aria-label="63 non-merge Git commits on 18 October 2026 UTC. Open daily note."><span class="build-value">63</span><span class="build-bar-track" aria-hidden="true"><span class="build-bar" style="--height:18.7%"></span></span><time datetime="2026-10-18"><span class="date-short">18 Oct</span><span class="date-full">18 October 2026&nbsp;UTC</span></time></a>
             <a class="build-chart-day" data-zero="false" href="#build-day-2026-10-19" aria-label="58 non-merge Git commits on 19 October 2026 UTC through 16:25 UTC. Open daily note."><span class="build-value">58</span><span class="build-bar-track" aria-hidden="true"><span class="build-bar" style="--height:17.2%"></span></span><time datetime="2026-10-19"><span class="date-short">19 Oct</span><span class="date-full">19 October 2026&nbsp;UTC</span></time></a>
           </div></div>
-          <p class="build-chart-note">Activity, not product completion. Timeline checked 19 October 2026, 16:25&nbsp;UTC at integrated commit <code>68cd7f1</code>. 19 October is a partial day.</p>
+          <p class="build-chart-note">Activity, not product completion. Integrated history checked at <code>68cd7f1</code>; the 19 October bar is a partial-day snapshot. On 20 October, 22 more non-merge commits were recorded on an isolated theme branch through 04:09&nbsp;UTC. Those branch commits are excluded from this integrated chart. <a href="#theme-work">Read the development update</a>.</p>
         </figure>
         <details class="build-method"><summary>How these numbers are counted</summary><p>Count each non-merge commit on the first-parent history reachable from the verified integrated origin/main snapshot once, bucketed by Git committer date in UTC.</p><p>Merge commits and commits only on unintegrated branches are excluded. Include zero days between the first and last commit dates.</p><p>Selected notes describe work recorded on each date. A feature may have reached the preview later. <strong>Counts do not measure parity, quality, or release readiness.</strong></p></details>
         <aside class="build-pause" aria-label="A note on pace"><p>On 13, 14 and 17 October, I paused work on RustMine and significantly reduced the number of commits. I did this to conserve inference allowance for other projects. I’d used a week’s allowance in two days and already had a reset.</p></aside>
@@ -780,11 +780,12 @@
         </div>
         <p class="directions-note">These are identity concepts: real marks, palette ideas, and type choices. They are not screens from a finished RustMine interface.</p>
         <aside class="theme-roadmap" id="theme-work" aria-labelledby="theme-work-title">
-          <div class="theme-roadmap-status"><span class="planned-mark">Work started</span><time datetime="2026-10-19">19 October 2026&nbsp;UTC</time></div>
-          <h3 id="theme-work-title">Theme compatibility work is underway.</h3>
-          <p>Application work has started with a source and fixture review of pinned Redmine 7.0.2. Three draft brand packages are ready for later review. The first required comparison will use Redmine’s own Default appearance and its unchanged Alternate and Classic themes on the same sample data and screens.</p>
-          <p>Once that baseline passes, Foundry, Clearline, and Common Ground will be made as additional themes through the same system. Separately installed Redmine themes will need their own checks.</p>
-          <p class="theme-roadmap-limit">No theme has reached the RustMine preview yet. A stylesheet loading alone does not establish compatibility.</p>
+          <div class="theme-roadmap-status"><span class="planned-mark">In development</span><time datetime="2026-10-20T04:11:00Z">20 October 2026 · 04:11&nbsp;UTC snapshot</time></div>
+          <h3 id="theme-work-title">Familiar themes first.</h3>
+          <p>On a separate development branch, RustMine now embeds pinned Redmine 7.0.2 Default core assets and unchanged Classic and Alternate theme packages, with theme selection and asset handling. Work has expanded into selected Issue, Project and administration screens using matching anonymous fixtures.</p>
+          <p>Through branch commit <code>0026d377</code> at 04:09&nbsp;UTC, 20 October has 22 unique non-merge first-parent commits on that branch and zero on integrated <code>origin/main</code>. The latest completed checkpoint, <code>5cffbefb</code> at 04:02&nbsp;UTC, passed 402 Rust tests and selected paired Rails/Rust checks on original-schema SQLite, PostgreSQL and MySQL. Later branch changes have not cleared their own exact-head gate.</p>
+          <p>Selected Default, Classic and Alternate screens have been compared internally. Full stock visual acceptance, combined release checks, private-clone preflight and a guarded preview switch remain open. Foundry, Clearline and Common Ground are prepared candidate packages outside the application, not integrated product views.</p>
+          <p class="theme-roadmap-limit">This development-branch work has not reached the RustMine preview. These commits are excluded from the integrated chart; selected checks do not establish full Redmine theme compatibility.</p>
         </aside>
       </div>
     </section>
@@ -936,7 +937,7 @@
       <p>The Google Analytics tag is configured for one initial page view using the RustMine.org address without query parameters or fragments, and a referrer origin without its path or query. Advertising signals and personalization are disabled in the tag. Google account-side Enhanced Measurement settings have not been verified. Read <a href="https://policies.google.com/privacy">Google's privacy policy</a> and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</p>
     </div>
   </section>
-  <footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 19 October 2026</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="#privacy">Privacy details</a>.</p></div></footer>
+  <footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 20 October 2026</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="#privacy">Privacy details</a>.</p></div></footer>
   <script src="/analytics.js" defer></script>
   <script>
     (() => {
