@@ -221,6 +221,12 @@
     .rule-list li { border-top: 1px solid var(--line); padding: 1rem 0; display: grid; grid-template-columns: 8rem 1fr; gap: .9rem; font-size: 1rem; }
     .rule-list strong { font-size: 1rem; }
     .rule-list span { color: var(--muted); }
+    .theme-status-list li { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+    .theme-status-list .theme-status-shot { width: min(100%, 720px); }
+    .theme-status-list .theme-status-shot figcaption strong { font-size: 1.1rem; }
+    .theme-status-list .screen-open span { color: #fff; }
+    .theme-status-list .theme-status-detail { display: block; max-width: 75ch; }
+    .theme-status-list .theme-capture-gap { margin: 0; color: var(--muted); }
     .team { background: #e5e9df; }
     .team-owner { display: grid; grid-template-columns: 185px 1fr; gap: 2rem; padding: 1.7rem 2rem; background: var(--forest-deep); color: #f5f4e9; border: 1px solid var(--forest-deep); }
     .team-owner h3 { font: 500 2.1rem/1.1 var(--serif); letter-spacing: -.04em; margin: .15rem 0 .5rem; }
