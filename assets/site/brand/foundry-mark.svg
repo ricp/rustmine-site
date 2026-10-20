@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Rustmine Foundry mark</title>
+  <desc id="desc">An angular R cut from a solid form, with an ember-colored forward stroke.</desc>
+  <path d="M7 9h31l15 14-15 14H21v18H7V9Zm14 13v3h17l3-2-3-1H21Z" fill="#172226" fill-rule="evenodd"/>
+  <path d="m31 37 17 18h16L45 36" fill="#d4471e"/>
+</svg>

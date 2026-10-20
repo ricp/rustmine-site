@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Rustmine Clearline mark</title>
+  <desc id="desc">A compact R in action blue, anchored by a green vertical line.</desc>
+  <path d="M11 11h25c12 0 20 7 20 18 0 8-4 14-11 17l15 17H43L31 49h-7v11H11V11Zm13 13v13h12c4 0 7-3 7-7s-3-6-7-6H24Z" fill="#2357e9" fill-rule="evenodd"/>
+  <path d="M11 8v50" stroke="#12896f" stroke-width="6" stroke-linecap="round"/>
+</svg>
