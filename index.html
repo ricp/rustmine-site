@@ -290,6 +290,15 @@
     .theme-roadmap h3 { font: 500 clamp(1.6rem, 2.7vw, 2.2rem)/1.15 var(--serif); letter-spacing: -.035em; margin: 1rem 0 .8rem; }
     .theme-roadmap p { max-width: 78ch; color: var(--muted); font-size: 1rem; margin: .7rem 0 0; }
     .theme-roadmap .theme-roadmap-limit { color: var(--ink); font-weight: 700; }
+    .theme-capture-set { margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
+    .theme-capture-set h4 { margin: 0; font: 500 clamp(1.35rem, 2vw, 1.8rem)/1.2 var(--serif); letter-spacing: -.025em; }
+    .theme-capture-set > p { margin: .55rem 0 0; }
+    .theme-capture-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+    .theme-shot { min-width: 0; margin: 0; border: 1px solid var(--line); background: var(--white); }
+    .theme-shot .screen-open { border-bottom: 1px solid var(--line); }
+    .theme-shot figcaption { padding: 1rem 1.1rem 1.15rem; }
+    .theme-shot figcaption strong { display: block; font: 500 1.3rem/1.2 var(--serif); }
+    .theme-shot .screen-caption { display: block; margin-top: .35rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
     .process { background: #e6eae0; }
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid #aab8ac; background: #aab8ac; }
     .step { background: var(--paper); padding: 1.7rem; min-height: 255px; }
@@ -469,6 +478,7 @@
       #contact { scroll-margin-top: 1rem; }
     }
     @media (max-width: 850px) {
+      .theme-capture-grid { grid-template-columns: 1fr; }
       .hero-grid, .db-panel, .hero-origin-grid, .measure-grid, .maintenance-grid { grid-template-columns: 1fr; }
       .hero-grid { grid-template-areas: "eyebrow" "main" "note"; row-gap: 0; }
       .hero-grid > .eyebrow { margin-bottom: 1.2rem; }
@@ -789,9 +799,27 @@
           <div class="theme-roadmap-status"><span class="planned-mark">In development</span><time datetime="2026-10-20T04:11:00Z">20 October 2026 · 04:11&nbsp;UTC snapshot</time></div>
           <h3 id="theme-work-title">Familiar themes first.</h3>
           <p>On a separate development branch, RustMine now embeds pinned Redmine 7.0.2 Default core assets and unchanged Classic and Alternate theme packages, with theme selection and asset handling. Work has expanded into selected Issue, Project and administration screens using matching anonymous fixtures.</p>
-          <p>Through branch commit <code>0026d377</code> at 04:09&nbsp;UTC, 20 October has 22 unique non-merge first-parent commits on that branch and zero on integrated <code>origin/main</code>. The latest completed checkpoint, <code>5cffbefb</code> at 04:02&nbsp;UTC, passed 402 Rust tests and selected paired Rails/Rust checks on original-schema SQLite, PostgreSQL and MySQL. Later branch changes have not cleared their own exact-head gate.</p>
-          <p>Selected Default, Classic and Alternate screens have been compared internally. Full stock visual acceptance, combined release checks, private-clone preflight and a guarded preview switch remain open. Foundry, Clearline and Common Ground are prepared candidate packages outside the application, not integrated product views.</p>
+          <p>Through branch commit <code>0026d377</code> at 04:09&nbsp;UTC, 20 October has 22 unique non-merge first-parent commits on that branch and zero on integrated <code>origin/main</code>. The 04:02&nbsp;UTC checkpoint <code>5cffbefb</code> passed 402 Rust tests and selected paired Rails/Rust checks on original-schema SQLite, PostgreSQL and MySQL. A later 04:18&nbsp;UTC branch checkpoint <code>989a9f9a</code> supplies the Tracker captures below; its bounded checks passed, while the combined release gate remains open. The earlier commit count is a dated snapshot.</p>
+          <p>Selected Default, Classic and Alternate screens have been compared on disposable fixtures. Full stock visual acceptance, combined release checks, private-clone preflight and a guarded preview switch remain open. Foundry, Clearline and Common Ground are prepared candidate packages outside the application, not integrated product views.</p>
           <p class="theme-roadmap-limit">This development-branch work has not reached the RustMine preview. These commits are excluded from the integrated chart; selected checks do not establish full Redmine theme compatibility.</p>
+          <section class="theme-capture-set" aria-labelledby="theme-trackers-title">
+            <h4 id="theme-trackers-title">One Tracker screen, three stock appearances</h4>
+            <p>Direct, unaltered RustMine development-branch captures of the same Tracker field summary after a saved update. Each uses disposable fixture data, English, and a 1280px viewport. Open an image to inspect it at full resolution.</p>
+            <div class="theme-capture-grid">
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/tracker-summary-default-989a9f9a.png" aria-label="View development-branch Tracker summary in Default at full resolution"><img src="assets/theme-work/tracker-summary-default-989a9f9a.png" alt="Tracker field summary and success notice in RustMine's Default stock appearance, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Default</strong><span class="screen-caption">Branch <code>989a9f9a</code> · <time datetime="2026-10-20T04:15:19Z">20 October 2026, 04:15:19 UTC</time>. Tracker summary after save.</span></figcaption></figure>
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/tracker-summary-classic-989a9f9a.png" aria-label="View development-branch Tracker summary in Classic at full resolution"><img src="assets/theme-work/tracker-summary-classic-989a9f9a.png" alt="The same Tracker field summary and success notice in RustMine's Classic stock theme, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Classic</strong><span class="screen-caption">Branch <code>989a9f9a</code> · <time datetime="2026-10-20T04:15:34Z">20 October 2026, 04:15:34 UTC</time>. Tracker summary after save.</span></figcaption></figure>
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/tracker-summary-alternate-989a9f9a.png" aria-label="View development-branch Tracker summary in Alternate at full resolution"><img src="assets/theme-work/tracker-summary-alternate-989a9f9a.png" alt="The same Tracker field summary and success notice in RustMine's Alternate stock theme, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Alternate</strong><span class="screen-caption">Branch <code>989a9f9a</code> · <time datetime="2026-10-20T04:15:56Z">20 October 2026, 04:15:56 UTC</time>. Tracker summary after save.</span></figcaption></figure>
+            </div>
+          </section>
+          <section class="theme-capture-set" aria-labelledby="theme-workflow-title">
+            <h4 id="theme-workflow-title">The Workflow Copy form under each theme</h4>
+            <p>The same expanded administration sidebar and Workflow Copy form from an earlier development checkpoint. These show the theme treatment and reachable controls on an anonymous fixture, not a completed compatibility result.</p>
+            <div class="theme-capture-grid">
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/workflow-copy-default-5cffbefb.png" aria-label="View development-branch Workflow Copy form in Default at full resolution"><img src="assets/theme-work/workflow-copy-default-5cffbefb.png" alt="Workflow Copy form with the administration sidebar expanded in RustMine's Default stock appearance, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Default</strong><span class="screen-caption">Branch <code>5cffbefb</code> · <time datetime="2026-10-20T03:59:50Z">20 October 2026, 03:59:50 UTC</time>. Workflow Copy form.</span></figcaption></figure>
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/workflow-copy-classic-5cffbefb.png" aria-label="View development-branch Workflow Copy form in Classic at full resolution"><img src="assets/theme-work/workflow-copy-classic-5cffbefb.png" alt="The same Workflow Copy form and expanded sidebar in RustMine's Classic stock theme, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Classic</strong><span class="screen-caption">Branch <code>5cffbefb</code> · <time datetime="2026-10-20T04:00:28Z">20 October 2026, 04:00:28 UTC</time>. Workflow Copy form.</span></figcaption></figure>
+              <figure class="theme-shot"><a class="screen-open" href="assets/theme-work/workflow-copy-alternate-5cffbefb.png" aria-label="View development-branch Workflow Copy form in Alternate at full resolution"><img src="assets/theme-work/workflow-copy-alternate-5cffbefb.png" alt="The same Workflow Copy form and expanded sidebar in RustMine's Alternate stock theme, using test data." width="1280" height="1000" loading="lazy" decoding="async"><span aria-hidden="true">View larger ↗</span></a><figcaption><strong>Alternate</strong><span class="screen-caption">Branch <code>5cffbefb</code> · <time datetime="2026-10-20T04:00:43Z">20 October 2026, 04:00:43 UTC</time>. Workflow Copy form.</span></figcaption></figure>
+            </div>
+          </section>
         </aside>
       </div>
     </section>
