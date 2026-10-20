@@ -126,12 +126,13 @@
       </div>
     </section><section class="section team" id="team" aria-labelledby="team-title">
       <div class="wrap">
-        <div class="section-heading"><div><div class="eyebrow">Me and three agents</div><h2 id="team-title">Who does what, and who decides.</h2></div><p>One agent reviews the work, one builds it, and one explores its identity. I direct the project and make the final decisions.</p></div>
+        <div class="section-heading"><div><div class="eyebrow">Me and a small agent team</div><h2 id="team-title">Who does what, and who decides.</h2></div><p>A PM reviews the work, two builders take separate engineering tasks, and a designer explores its identity. I direct the project and make the final decisions.</p></div>
         <div class="team-owner"><div class="eyebrow">Direction / accountability</div><div><h3>Richard Piacentini</h3><p>I choose what to build, review what the agents produce, and decide when the evidence is strong enough to move forward. I also decide whether a visual direction belongs in the product.</p></div></div>
         <div class="team-lanes">
-          <article class="team-lane"><div><span class="lane-label">01 / review</span><h3>Project manager</h3></div><p>The PM reviews the builder’s work against Redmine and reports what is working, what remains partial, and what needs another look.</p></article>
-          <article class="team-lane"><div><span class="lane-label">02 / implementation</span><h3>Build agent</h3></div><p>The builder studies a Redmine task, builds its Rust version, and compares what both applications do with the same sample data.</p></article>
-          <article class="team-lane"><div><span class="lane-label">03 / brand exploration</span><h3>Brand designer</h3></div><p>The designer created Foundry, Clearline, and Common Ground: three possible identities with marks, colors, and typography. I have not chosen one or applied it to the product.</p></article>
+          <article class="team-lane"><div><span class="lane-label">01 / review</span><h3>Project manager</h3></div><p>The PM reviews each builder’s work against Redmine and reports what is working, what remains partial, and what needs another look.</p></article>
+          <article class="team-lane"><div><span class="lane-label">02 / implementation</span><h3>First builder</h3></div><p>One builder studies a Redmine task, builds its Rust version, and compares what both applications do with the same sample data.</p></article>
+          <article class="team-lane"><div><span class="lane-label">03 / independent task</span><h3>Second builder</h3></div><p>A second builder takes a bounded engineering task with separate files and test resources. Its work still needs independent review and a combined release check.</p></article>
+          <article class="team-lane"><div><span class="lane-label">04 / brand exploration</span><h3>Brand designer</h3></div><p>The designer created Foundry, Clearline, and Common Ground: three possible identities with marks, colors, and typography. I have not chosen one or applied it to the product.</p></article>
         </div>
         <div class="team-foot"><img src="/assets/site/portrait-richard.jpg" alt="Portrait of Richard Piacentini" width="88" height="88"><div><p>I keep the team small. Agent count is not the goal.</p><strong>I’m the bottleneck. That’s a feature.</strong></div></div>
       </div>
@@ -149,6 +150,12 @@
           <p>Redmine gets a lot done through <a class="external-link" href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" aria-label="Ruby on Rails (opens in a new tab)" title="Opens in a new tab">Rails</a>. Its application code is only part of the implementation. Rails supplies capabilities that do not appear when you count Redmine’s own source lines.</p>
           <p>With RustMine, I’m trying to reproduce <strong>the features and behavior people rely on</strong>, including how their data and permissions work. I’m not trying to reproduce Redmine’s Ruby and Rails architecture. Rebuilding Rails just to rebuild Redmine would miss the point.</p>
           <p>RustMine has Rust dependencies too, and a different architecture changes where implementation code lives. That does not mean every additional line is justified. A raw application line count is a poor scorecard. <strong>Completeness needs tested workflows. Efficiency needs a fair measurement.</strong> Neither comes from counting lines.</p>
+        </div>
+        <div class="architecture-note" id="parallel-work">
+          <h3>Parallel engineering, one acceptance bar</h3>
+          <p>I can give builders separate, bounded tasks with named file ownership. Each works in its own Git worktree and uses separate disposable databases, browser state, ports, build output and test evidence. We agree on shared files before anyone edits them.</p>
+          <p>The PM reviews each branch independently. One integration owner then brings accepted work together and repeats the combined Rust, original Redmine tests, three-database and real-browser checks on the same commit. The original Redmine schema must remain intact. A private-clone preflight and guarded local-preview switch still stand between that commit and an integrated release.</p>
+          <p>The designer can prepare visual candidates and review safe fixture captures alongside engineering. The stock Default, Classic and Alternate theme checks still come before branded themes. This arrangement is intended to reduce waiting; I have not measured a time saving.</p>
         </div>
       </div>
     </section><section class="section maintenance" id="maintenance" aria-labelledby="maintenance-title">
