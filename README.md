@@ -21,6 +21,12 @@ The public footer discloses Cloudflare Web Analytics and Google Analytics 4. `an
 
 The site is a development showcase. It does not represent a production-ready RustMine application or a verified performance gain.
 
+## Search metadata
+
+The canonical URL is `https://rustmine.org/`. `sitemap.xml` lists that one page; fragment links within it are sections, not separate pages. The repository's `robots.txt` only points to the sitemap. Cloudflare may prepend its managed robots content to the served response; keep that policy intact when changing the sitemap pointer.
+
+The homepage includes WebSite, WebPage, and author identity data. Keep it aligned with visible claims and avoid software release, rating, pricing, compatibility, or speed assertions until they are verified. Existing gallery images under `assets/site/` are byte-for-byte extractions of the previously embedded images; retain their captions, dimensions, and privacy provenance when editing them.
+
 ## Upstream watch
 
 The `#upstream-watch` section presents a dated Redmine research snapshot in three states: observed upstream, selected for RustMine review, and verified in an integrated RustMine release. The existing daily upstream research workflow supplies evidence to the site coordinator; this repository adds no timer or live feed. See the [refresh contract](docs/UPSTREAM_WATCH_REFRESH.md) before changing its date or entries.
