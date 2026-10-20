@@ -23,7 +23,7 @@ The site is a development showcase. It does not represent a production-ready Rus
 
 ## Search metadata
 
-The canonical URL is `https://rustmine.org/`. `sitemap.xml` lists that one page; fragment links within it are sections, not separate pages. The repository's `robots.txt` only points to the sitemap. Cloudflare may prepend its managed robots content to the served response; keep that policy intact when changing the sitemap pointer.
+The canonical URL is `https://rustmine.org/`. `sitemap.xml` lists that one page; fragment links within it are sections, not separate pages. The repository's `robots.txt` retains the content-signal explanation that Cloudflare previously served and adds a sitemap pointer, with no crawler restrictions. Keep it aligned with the hosting policy if that policy changes.
 
 The homepage includes WebSite, WebPage, and author identity data. Keep it aligned with visible claims and avoid software release, rating, pricing, compatibility, or speed assertions until they are verified. Existing gallery images under `assets/site/` are byte-for-byte extractions of the previously embedded images; retain their captions, dimensions, and privacy provenance when editing them.
 
