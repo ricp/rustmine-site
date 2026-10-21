@@ -550,3 +550,25 @@
       .brand-mark { width: 27px; height: 27px; border-width: 2px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Compact evidence navigation keeps details reachable without repeating them. */
+.build-jump { margin: 1.5rem 0 2rem; color: #d4e3d8; }
+.build-jump a { color: var(--mint); font-weight: 700; }
+.capture-provenance, .reference-details { margin-top: .85rem; }
+.capture-provenance summary, .reference-details summary { width: fit-content; cursor: pointer; color: var(--forest); font-weight: 700; }
+.capture-provenance summary:focus-visible, .reference-details summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.capture-provenance[open] p { margin: .65rem 0 0; }
+.reference-details { border-top: 1px solid var(--line); padding-top: 1rem; }
+.reference-details .upstream-grid { margin-top: 1.2rem; }
+.timeline .entry { grid-template-columns: 140px minmax(0, 1fr); gap: 1rem; padding: .8rem 0; }
+.timeline .entry h3 { font-size: 1.15rem; line-height: 1.35; margin: .15rem 0; }
+.timeline .entry h3 a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .16em; }
+.timeline .entry h3 a:hover { color: var(--forest); }
+.timeline .entry-evidence { margin-top: .4rem; }
+.timeline .entry-evidence summary { width: fit-content; cursor: pointer; color: var(--forest); font-size: .9rem; font-weight: 700; }
+.timeline .entry-evidence summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.timeline .entry-evidence[open] p { margin-top: .65rem; }
+@media (max-width: 700px) {
+  .timeline .entry { display: block; padding: 1rem 0; }
+  .timeline .entry h3 { font-size: 1.2rem; margin: .25rem 0 0; }
+}

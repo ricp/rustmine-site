@@ -117,22 +117,22 @@
         </div>
         <div class="db-panel-side">
           <h3>What I’ve checked so far</h3>
-          <p>I compare specific tasks with <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2</a> on <a class="external-link" href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" aria-label="SQLite (opens in a new tab)" title="Opens in a new tab">SQLite</a>, <a class="external-link" href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" aria-label="PostgreSQL (opens in a new tab)" title="Opens in a new tab">PostgreSQL</a>, and <a class="external-link" href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" aria-label="MySQL (opens in a new tab)" title="Opens in a new tab">MySQL</a>.</p>
+          <p>For selected tasks, I compare RustMine with <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2</a> on <a class="external-link" href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" aria-label="SQLite (opens in a new tab)" title="Opens in a new tab">SQLite</a>, <a class="external-link" href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" aria-label="PostgreSQL (opens in a new tab)" title="Opens in a new tab">PostgreSQL</a>, and <a class="external-link" href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" aria-label="MySQL (opens in a new tab)" title="Opens in a new tab">MySQL</a>.</p>
           <ul class="rule-list">
             <li><strong>The rule</strong><span>Leave Redmine’s original tables and the record of changes to them alone. RustMine can add tables of its own.</span></li>
-            <li><strong>Today</strong><span>Many Redmine features still need work. I would not replace a live customer installation with this build. <a class="external-link" href="https://www.redmine.org/plugins" target="_blank" rel="noopener noreferrer" aria-label="Plugins (opens in a new tab)" title="Opens in a new tab">Plugins</a> are outside the first version I’m aiming for.</span></li>
+            <li><strong>Scope</strong><span>Unchanged Ruby plugins are outside the first target. <a href="/progress/#build">See current release limits</a>.</span></li>
           </ul>
         </div>
       </div>
     </section><section class="section team" id="team" aria-labelledby="team-title">
       <div class="wrap">
         <div class="section-heading"><div><div class="eyebrow">Me and a small agent team</div><h2 id="team-title">Who does what, and who decides.</h2></div><p>A PM reviews the work, two builders take separate engineering tasks, and a designer explores its identity. I direct the project and make the final decisions.</p></div>
-        <div class="team-owner"><div class="eyebrow">Direction / accountability</div><div><h3>Richard Piacentini</h3><p>I choose what to build, review what the agents produce, and decide when the evidence is strong enough to move forward. I also decide whether a visual direction belongs in the product.</p></div></div>
+        <div class="team-owner"><div class="eyebrow">Direction / accountability</div><div><h3>Richard Piacentini</h3><p>I set direction, review the evidence and decide what belongs in the product.</p></div></div>
         <div class="team-lanes">
-          <article class="team-lane"><div><span class="lane-label">01 / review</span><h3>Project manager</h3></div><p>The PM reviews each builder’s work against Redmine and reports what is working, what remains partial, and what needs another look.</p></article>
-          <article class="team-lane"><div><span class="lane-label">02 / implementation</span><h3>First builder</h3></div><p>One builder studies a Redmine task, builds its Rust version, and compares what both applications do with the same sample data.</p></article>
-          <article class="team-lane"><div><span class="lane-label">03 / independent task</span><h3>Second builder</h3></div><p>A second builder takes a bounded engineering task with separate files and test resources. Its work still needs independent review and a combined release check.</p></article>
-          <article class="team-lane"><div><span class="lane-label">04 / brand exploration</span><h3>Brand designer</h3></div><p>The designer created Foundry, Clearline, and Common Ground: three possible identities with marks, colors, and typography. I have not chosen one or applied it to the product.</p></article>
+          <article class="team-lane"><div><span class="lane-label">01 / review</span><h3>Project manager</h3></div><p>Reviews each branch against Redmine and records its limits.</p></article>
+          <article class="team-lane"><div><span class="lane-label">02 / implementation</span><h3>First builder</h3></div><p>Implements a bounded Redmine workflow in Rust and compares it on matching data.</p></article>
+          <article class="team-lane"><div><span class="lane-label">03 / independent task</span><h3>Second builder</h3></div><p>Takes a separate task with isolated files and test resources; it faces the same review gate.</p></article>
+          <article class="team-lane"><div><span class="lane-label">04 / brand exploration</span><h3>Brand designer</h3></div><p>Prepares the three unchosen theme directions and reviews fixture captures.</p></article>
         </div>
         <div class="team-foot"><img src="/assets/site/portrait-richard.jpg" alt="Portrait of Richard Piacentini" width="88" height="88"><div><p>I keep the team small. Agent count is not the goal.</p><strong>I’m the bottleneck. That’s a feature.</strong></div></div>
       </div>
@@ -145,18 +145,8 @@
           <article class="step"><div class="number">03</div><h3>Try it in both apps</h3><p>Give <a class="external-link" href="https://www.redmine.org/projects/redmine/wiki/Guide" target="_blank" rel="noopener noreferrer" aria-label="Redmine (opens in a new tab)" title="Opens in a new tab">Redmine</a> and RustMine matching sample data. Compare the pages, permissions, files, and saved results.</p></article>
           <article class="step"><div class="number">04</div><h3>Review the result</h3><p>Check the covered behavior, permissions, and saved data across the supported databases before I accept the change.</p></article>
         </div>
-        <div class="architecture-note">
-          <h3 id="architecture-title">Features and architecture</h3>
-          <p>Redmine gets a lot done through <a class="external-link" href="https://rubyonrails.org/" target="_blank" rel="noopener noreferrer" aria-label="Ruby on Rails (opens in a new tab)" title="Opens in a new tab">Rails</a>. Its application code is only part of the implementation. Rails supplies capabilities that do not appear when you count Redmine’s own source lines.</p>
-          <p>With RustMine, I’m trying to reproduce <strong>the features and behavior people rely on</strong>, including how their data and permissions work. I’m not trying to reproduce Redmine’s Ruby and Rails architecture. Rebuilding Rails just to rebuild Redmine would miss the point.</p>
-          <p>RustMine has Rust dependencies too, and a different architecture changes where implementation code lives. That does not mean every additional line is justified. A raw application line count is a poor scorecard. <strong>Completeness needs tested workflows. Efficiency needs a fair measurement.</strong> Neither comes from counting lines.</p>
-        </div>
-        <div class="architecture-note" id="parallel-work">
-          <h3>Parallel engineering, one acceptance bar</h3>
-          <p>I can give builders separate, bounded tasks with named file ownership. Each works in its own Git worktree and uses separate disposable databases, browser state, ports, build output and test evidence. We agree on shared files before anyone edits them.</p>
-          <p>The PM reviews each branch independently. One integration owner then brings accepted work together and repeats the combined Rust, original Redmine tests, three-database and real-browser checks on the same commit. The original Redmine schema must remain intact. A private-clone preflight and guarded local-preview switch still stand between that commit and an integrated release.</p>
-          <p>The designer can prepare visual candidates and review safe fixture captures alongside engineering. The stock Default, Classic and Alternate theme checks still come before branded themes. This arrangement is intended to reduce waiting; I have not measured a time saving.</p>
-        </div>
+        <div class="architecture-note"><h3 id="architecture-title">Features and architecture</h3><p>Redmine relies on Rails. RustMine aims to preserve the workflows, permissions and data people depend on, using a Rust architecture rather than copying Rails. Source-line counts cannot prove completeness; tested behavior matters.</p></div>
+        <div class="architecture-note" id="parallel-work"><h3>Parallel engineering, one acceptance bar</h3><p>Builders take bounded tasks in separate worktrees with named file ownership and isolated databases, browsers, ports and build output. A single integration owner combines reviewed branches and repeats the original Redmine, Rust, three-database and browser checks on one commit. The original schema, private-clone preflight and guarded switch remain release gates. Parallel work has no measured time saving yet.</p></div>
       </div>
     </section><section class="section maintenance" id="maintenance" aria-labelledby="maintenance-title">
       <div class="wrap">
@@ -178,10 +168,11 @@
           <div>
             <div class="eyebrow">After the first port / Source watch</div>
             <h2 id="upstream-watch-title">Keeping up with Redmine.</h2>
-            <p class="upstream-intro">RustMine is built against Redmine 7.0.2. This watch keeps later upstream changes separate from the work needed to review and release them in RustMine.</p>
+            <p class="upstream-intro">RustMine is pinned to Redmine 7.0.2. Later upstream changes are research and review candidates until separately integrated and tested.</p>
           </div>
           <div class="upstream-checked"><span>Research snapshot</span><time datetime="2026-10-20T11:51:59Z">20 October 2026<br>11:51:59 UTC</time></div>
         </div>
+        <details class="reference-details"><summary>Open the dated upstream register and review candidates</summary>
         <div class="upstream-grid">
           <article class="upstream-card observed">
             <span class="upstream-state">01 / Seen upstream</span>
@@ -220,6 +211,7 @@
           <p><span class="upstream-source-label">How to read this</span>A change may appear on both trunk and a stable branch. This view follows the behavior once and marks where it was seen. At the research scan, official SVN directory browsing lagged behind the newer revisions cited by official issue pages and recorded in the community mirror; a later directory read showed r25284. The register covers commit file lists, with selected diffs reviewed; the scan did not review every open issue or run Redmine or RustMine tests. Seen upstream does not mean released by Redmine or integrated into RustMine.</p>
           <a href="https://www.redmine.org/projects/redmine/wiki/Download" target="_blank" rel="noopener noreferrer" aria-label="Redmine 7.0.2 baseline (opens in a new tab)" title="Opens in a new tab">Redmine 7.0.2 baseline </a>
         </div>
+        </details>
       </div>
     </section>
 <!-- upstream-watch:end --><section class="section measure" id="benchmark" aria-labelledby="benchmark-title">
@@ -229,12 +221,12 @@
       </div>
     </section><section class="section cost" id="cost" aria-labelledby="cost-title">
       <div class="wrap">
-        <div class="section-heading"><div><div class="eyebrow">Tools behind the work</div><h2 id="cost-title">What I use to build it.</h2></div><p>For this experiment, I use <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> and a dedicated <a class="external-link" href="https://www.apple.com/mac-mini/" target="_blank" rel="noopener noreferrer" aria-label="Mac mini (opens in a new tab)" title="Opens in a new tab">Mac mini</a>. I keep the engineering decisions and review in my own hands.</p></div>
+        <div class="section-heading"><div><div class="eyebrow">Tools behind the work</div><h2 id="cost-title">What I use to build it.</h2></div><p>I use <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> on a dedicated <a class="external-link" href="https://www.apple.com/mac-mini/" target="_blank" rel="noopener noreferrer" aria-label="Mac mini (opens in a new tab)" title="Opens in a new tab">Mac mini</a>, while keeping decisions and review in my own hands.</p></div>
         <div class="cost-grid">
           <div class="cost-item"><h3>Codex subscription</h3><strong>$200 monthly plan</strong><p>I use OpenAI’s $200 monthly plan for RustMine and my other projects. That is the subscription price, not a cost dedicated to RustMine.</p></div>
           <div class="cost-item"><h3>Dedicated hardware</h3><strong>Mac mini</strong><p>I bought a 16 GB / 512 GB Mac mini for the experiment.</p></div>
         </div>
-        <div class="cost-after"><p>One reason I started RustMine was to try <a class="external-link" href="https://openai.com/" target="_blank" rel="noopener noreferrer" aria-label="OpenAI (opens in a new tab)" title="Opens in a new tab">OpenAI</a>’s <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6 Sol</a> and <a class="external-link" href="https://developers.openai.com/api/docs/models/gpt-6.1-sol" target="_blank" rel="noopener noreferrer" aria-label="GPT-6.1 Sol (opens in a new tab)" title="Opens in a new tab">GPT-6.1 Sol</a> on an application I know well, using <a class="external-link" href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer" aria-label="Codex (opens in a new tab)" title="Opens in a new tab">Codex</a> straight out of the box without a custom configuration.</p><p>My job remains to understand the work, review its evidence, and decide what belongs in the product. I have not calculated the total cost of this experiment.</p></div>
+        <div class="cost-after"><p>I use Codex on a project I know well, without a custom model setup. I still review the evidence and decide what belongs in the product. I have not calculated the total cost of this experiment.</p></div>
       </div>
     </section>
   </main>
