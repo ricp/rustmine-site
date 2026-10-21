@@ -78,6 +78,10 @@
     .hero-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: .875rem 1rem; border: 1px solid var(--accent); background: var(--accent); color: #0c211e; text-decoration: none; font-size: 1rem; font-weight: 800; line-height: 1.35; }
     .hero-primary:hover { background: #ef8a5c; border-color: #ef8a5c; }
     .hero-primary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .hero-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: .875rem 1rem; border: 1px solid var(--mint); color: #f7f7ee; text-decoration: none; font-size: 1rem; font-weight: 700; line-height: 1.35; }
+    .hero-secondary:hover { background: #22433b; }
+    .hero-secondary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .hero-demo { margin: .9rem 0 0; line-height: 1.5; }
     .hero-contact-note { max-width: 56ch; margin: 1.1rem 0 0; color: #d1e0d8; font-size: 1rem; line-height: 1.55; }
     .button { display: inline-flex; justify-content: center; align-items: center; gap: .6rem; padding: .83rem 1.2rem; border: 1px solid var(--accent); background: var(--accent); color: #1c2622; text-decoration: none; font-size: 1rem; font-weight: 800; }
     .button:hover { background: #ef8a5c; border-color: #ef8a5c; }
@@ -502,8 +506,8 @@
       .build-day-body { padding: 0 .2rem 1.5rem; font-size: 1.0625rem; line-height: 1.7; }
       .hero-tagline { font-size: clamp(1.6rem, 6vw, 2rem); line-height: 1.25; margin-bottom: 1.25rem; }
       .hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; align-items: stretch; }
-      .hero-actions .hero-primary { width: 100%; min-height: 56px; padding: .875rem 1rem; font-size: 1rem; }
-      .hero-actions .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+      .hero-actions .hero-primary, .hero-actions .hero-secondary { width: 100%; min-height: 56px; padding: .875rem 1rem; font-size: 1rem; }
+      .hero-demo .text-link { display: inline-flex; align-items: center; min-height: 44px; }
       h1 { font-size: clamp(3.15rem, 13vw, 5rem); }
       .steps, .capability-grid, .directions-grid { grid-template-columns: 1fr; }
       .db-panel-lead, .db-panel-side { padding: 1.4rem; }
