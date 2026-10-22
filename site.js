@@ -4,12 +4,8 @@
       if (!counter || !firstCommit) return;
       const start = new Date(firstCommit.dateTime);
       if (Number.isNaN(start.getTime())) return;
-      const bangkokDate = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Asia/Bangkok', year: 'numeric', month: '2-digit', day: '2-digit'
-      });
       const calendarDay = date => {
-        const parts = Object.fromEntries(bangkokDate.formatToParts(date).map(part => [part.type, part.value]));
-        return Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
+        return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
       };
       const startDay = calendarDay(start);
       function update() {
