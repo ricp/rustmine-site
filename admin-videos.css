@@ -17,7 +17,6 @@
 .video-featured-caption p { margin: 0; color: var(--muted); font-size: .88rem; }
 .video-feature-label { color: #9a5238; font: .72rem var(--mono); text-transform: uppercase; white-space: nowrap; }
 .video-status { margin: .5rem .15rem; color: #9a5238; font-size: .88rem; }
-.video-direct { display: inline-block; margin: .6rem .15rem 0; color: var(--forest); font-size: .85rem; }
 .video-playlist { display: grid; grid-template-columns: 1fr; align-content: start; gap: .55rem; }
 .video-clip { display: flex; align-items: center; gap: .8rem; width: 100%; min-height: 70px; padding: .65rem .8rem; background: var(--white); border: 1px solid var(--line); color: var(--ink); text-align: left; font: inherit; cursor: pointer; }
 .video-clip:hover { border-color: #9a5238; }
