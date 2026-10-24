@@ -67,6 +67,7 @@
 }
   </script>
     <link rel="stylesheet" href="/site.css">
+    <link rel="stylesheet" href="/admin-videos.css">
   <script src="/legacy-fragments.js"></script>
 </head>
 <body>
@@ -103,7 +104,43 @@
       
       
       <div class="wrap hero-tail"><span>Personal experiment · private source</span><span>Built around existing Redmine data</span><span>No speed result yet</span></div>
-    </section><section class="section" aria-labelledby="home-story-title"><div class="wrap"><div class="section-heading"><div><div class="eyebrow">Why I started</div><h2 id="home-story-title">I love Redmine. I also want it to be faster.</h2></div><p>I’ve used Redmine since 2007, including for customers. I’m building RustMine to see whether Rust can preserve the data and behavior those projects depend on while using fewer resources. I haven’t measured a speed or cost improvement yet. <a href="/method/#story">Read the full story</a>.</p></div></div></section>
+    </section>
+    <section class="admin-videos" id="admin-videos" aria-labelledby="admin-videos-title">
+      <div class="wrap">
+        <div class="video-head">
+          <div>
+            <div class="eyebrow video-new-line"><span class="video-new-badge">NEW</span><span>Admin screen recordings</span></div>
+            <h2 id="admin-videos-title">See the work in motion.</h2>
+            <p>Six short looks at RustMine’s administration screens. Choose a screen to watch its recording.</p>
+          </div>
+          <span class="video-count">06 VIDEOS</span>
+        </div>
+        <div class="video-layout">
+          <div class="video-featured">
+            <video id="admin-video-player" controls playsinline preload="metadata" width="1306" height="808" poster="/assets/admin-videos/workflow-poster.jpg" aria-label="Workflow administration recording">
+              <source src="/assets/admin-videos/workflow.mp4" type="video/mp4">
+              Your browser does not support HTML video. <a href="/assets/admin-videos/workflow.mp4">Download the Workflow recording</a>.
+            </video>
+            <div class="video-featured-caption">
+              <div><h3 id="admin-video-title">Workflow</h3><p id="admin-video-description">Configure status transitions in the administration workflow matrix.</p></div>
+              <span class="video-feature-label">Selected clip</span>
+            </div>
+            <p class="video-status" id="admin-video-status" role="status" hidden></p>
+            <a id="admin-video-direct" class="video-direct" href="/assets/admin-videos/workflow.mp4">Open or download this recording</a>
+          </div>
+          <div class="video-playlist" aria-label="Choose an administration recording">
+            <button class="video-clip" type="button" data-video="workflow" data-title="Workflow" data-description="Configure status transitions in the administration workflow matrix." aria-controls="admin-video-player" aria-pressed="true"><span class="video-clip-number">01</span><span><span class="video-clip-name">Workflow</span><span class="video-clip-sub">Status transitions · 1:00</span></span></button>
+            <button class="video-clip" type="button" data-video="users" data-title="Users" data-description="Review user filters and account settings on fixture data." aria-controls="admin-video-player" aria-pressed="false"><span class="video-clip-number">02</span><span><span class="video-clip-name">Users</span><span class="video-clip-sub">Accounts and filters · 0:50</span></span></button>
+            <button class="video-clip" type="button" data-video="roles" data-title="Roles" data-description="Review role visibility and permission settings." aria-controls="admin-video-player" aria-pressed="false"><span class="video-clip-number">03</span><span><span class="video-clip-name">Roles</span><span class="video-clip-sub">Permissions · 0:47</span></span></button>
+            <button class="video-clip" type="button" data-video="trackers" data-title="Trackers" data-description="Edit tracker settings and their available fields." aria-controls="admin-video-player" aria-pressed="false"><span class="video-clip-number">04</span><span><span class="video-clip-name">Trackers</span><span class="video-clip-sub">Issue types · 1:17</span></span></button>
+            <button class="video-clip" type="button" data-video="custom-fields" data-title="Custom Fields" data-description="Configure custom fields and their options." aria-controls="admin-video-player" aria-pressed="false"><span class="video-clip-number">05</span><span><span class="video-clip-name">Custom Fields</span><span class="video-clip-sub">Field configuration · 1:23</span></span></button>
+            <button class="video-clip" type="button" data-video="enumerations" data-title="Enumerations" data-description="Review priorities, time activities and document categories." aria-controls="admin-video-player" aria-pressed="false"><span class="video-clip-number">06</span><span><span class="video-clip-name">Enumerations</span><span class="video-clip-sub">Shared lists · 0:45</span></span></button>
+          </div>
+        </div>
+        <p class="video-foot">Recorded in a development environment with fixture data. These clips show selected administration screens; they do not establish full Redmine behavior or production readiness.</p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="home-story-title"><div class="wrap"><div class="section-heading"><div><div class="eyebrow">Why I started</div><h2 id="home-story-title">I love Redmine. I also want it to be faster.</h2></div><p>I’ve used Redmine since 2007, including for customers. I’m building RustMine to see whether Rust can preserve the data and behavior those projects depend on while using fewer resources. I haven’t measured a speed or cost improvement yet. <a href="/method/#story">Read the full story</a>.</p></div></div></section>
 <section class="build-timeline" id="latest" aria-labelledby="latest-title"><div class="wrap"><div class="build-head"><div><div class="eyebrow">Latest verified work</div><h2 id="latest-title">Where the work stands.</h2></div></div>
   <div class="build-latest"><div><span class="eyebrow">Integrated local preview · <time datetime="2026-10-24">24 October 2026 UTC</time></span><h3>The weekly Calendar repair is in the preview.</h3><p>The tested <code>eff7f9e0</code> update adds a seven-day Calendar view and fixes its related issue-menu interactions. Its selected Rust, unchanged Rails, browser and original-schema three-database checks passed, followed by protected backup, restore, rollback and live checks. Home, other UI repairs, full stock-theme review and dense administration coverage remain unfinished. <a href="/progress/#build">Current scope and limits</a>.</p></div></div>
   <aside class="build-progress" aria-labelledby="branch-progress-title"><span class="eyebrow" id="branch-progress-title">Development branches · 24 October 2026 UTC</span><p>Newer Home work remains on a separate branch. Branded themes are unselected; full stock appearance and interaction review remains open. <a href="/progress/#theme-status">See the branch and theme states</a>.</p></aside>
@@ -121,5 +158,6 @@
 <footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Engineering snapshot · 24 October 2026 UTC</span><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="/privacy/">Privacy details</a>. · <a href="/design/">Design directions</a> · <a href="/">Home</a>.</p></div></footer>
   <script src="/analytics.js" defer></script>
   <script src="/site.js" defer></script>
+  <script src="/admin-videos.js" defer></script>
 </body>
 </html>
