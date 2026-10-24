@@ -4,7 +4,6 @@
   const source = player.querySelector('source');
   const title = document.getElementById('admin-video-title');
   const description = document.getElementById('admin-video-description');
-  const direct = document.getElementById('admin-video-direct');
   const status = document.getElementById('admin-video-status');
   const buttons = [...document.querySelectorAll('.video-clip')];
   const base = '/assets/admin-videos/';
@@ -19,14 +18,13 @@
     player.setAttribute('aria-label', `${button.dataset.title} administration recording`);
     title.textContent = button.dataset.title;
     description.textContent = button.dataset.description;
-    direct.href = url;
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     status.hidden = true;
     player.load();
   }));
 
   player.addEventListener('error', () => {
-    status.textContent = 'This recording could not load. Try the direct video link below.';
+    status.textContent = 'This recording could not load. Please try again later.';
     status.hidden = false;
   });
 })();
