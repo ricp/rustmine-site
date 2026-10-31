@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "checkedUtc": "2026-10-31T19:18:51.276974+00:00",
+  "dateBasis": "Git committer timestamp converted to UTC",
+  "ancestry": "All commits reachable from each exact head, deduplicated by full SHA; commits with two or more parents excluded. Not first-parent.",
+  "range": {
+    "start": "2026-10-11",
+    "end": "2026-10-31"
+  },
+  "acceptedSharedUtc": "2026-10-31T13:50:32.848432Z",
+  "heads": {
+    "shared": {
+      "commit": "0153760446615584d53dd2822d08d31533aa4991",
+      "tree": "e84975731c484a0cdd7036ae7a1932320b6a8a72",
+      "committerUtc": "2026-10-31T10:16:43Z",
+      "uniqueNonMerge": 1900,
+      "shaSetSha256": "6300f5ce07397326d2efe69da82365be674a1725044be71bcb5eb5c35fd7685d",
+      "daily": {
+        "2026-10-11": 164,
+        "2026-10-12": 337,
+        "2026-10-13": 84,
+        "2026-10-14": 78,
+        "2026-10-15": 284,
+        "2026-10-16": 162,
+        "2026-10-17": 60,
+        "2026-10-18": 63,
+        "2026-10-19": 88,
+        "2026-10-20": 133,
+        "2026-10-21": 275,
+        "2026-10-22": 42,
+        "2026-10-23": 3,
+        "2026-10-24": 31,
+        "2026-10-25": 59,
+        "2026-10-26": 7,
+        "2026-10-27": 11,
+        "2026-10-30": 18,
+        "2026-10-31": 1
+      },
+      "firstParentNonMerge": 1651
+    },
+    "portable": {
+      "commit": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
+      "tree": "2b28bff80b3a484fb4a5dfbea85409eb972abd35",
+      "committerUtc": "2026-11-01T01:00:06+07:00",
+      "uniqueNonMerge": 1904,
+      "shaSetSha256": "a5883a5f6d07789b00c9202ae570e997ce610c05035252f9e4f4d855f85cb0a0",
+      "daily": {
+        "2026-10-11": 164,
+        "2026-10-12": 337,
+        "2026-10-13": 84,
+        "2026-10-14": 78,
+        "2026-10-15": 284,
+        "2026-10-16": 162,
+        "2026-10-17": 60,
+        "2026-10-18": 63,
+        "2026-10-19": 88,
+        "2026-10-20": 133,
+        "2026-10-21": 275,
+        "2026-10-22": 42,
+        "2026-10-23": 3,
+        "2026-10-24": 31,
+        "2026-10-25": 59,
+        "2026-10-26": 7,
+        "2026-10-27": 11,
+        "2026-10-30": 18,
+        "2026-10-31": 5
+      },
+      "firstParentNonMerge": 1655
+    },
+    "mainline": {
+      "commit": "eff7f9e02142b4d3e9ee704b9ec6be2e6292f3f1",
+      "tree": "8f819cb6f27c842f10441086493aac0f0d5e81b1",
+      "committerUtc": "2026-10-24T16:18:46+07:00",
+      "uniqueNonMerge": 1785,
+      "shaSetSha256": "87a83e2ccdeaa3cc3d6b1f516e24ccab22acecd2f67e0c2fb25a510f2037c91a",
+      "daily": {
+        "2026-10-11": 164,
+        "2026-10-12": 337,
+        "2026-10-13": 84,
+        "2026-10-14": 78,
+        "2026-10-15": 284,
+        "2026-10-16": 162,
+        "2026-10-17": 60,
+        "2026-10-18": 63,
+        "2026-10-19": 88,
+        "2026-10-20": 133,
+        "2026-10-21": 275,
+        "2026-10-22": 42,
+        "2026-10-23": 3,
+        "2026-10-24": 12
+      },
+      "firstParentNonMerge": 1587
+    },
+    "legacy": {
+      "commit": "68cd7f1129ed5b091f80b8e252e0efbe35eef1a6",
+      "tree": "81e005a24cea91f8ff3adc6028b78569e8e5a483",
+      "committerUtc": "2026-10-19T22:48:53+07:00",
+      "uniqueNonMerge": 1290,
+      "shaSetSha256": "c438d4edefa1ba329bc1bd161262fff528ff76869fee5a4438878ae401a27d8a",
+      "daily": {
+        "2026-10-11": 164,
+        "2026-10-12": 337,
+        "2026-10-13": 84,
+        "2026-10-14": 78,
+        "2026-10-15": 284,
+        "2026-10-16": 162,
+        "2026-10-17": 60,
+        "2026-10-18": 63,
+        "2026-10-19": 58
+      },
+      "firstParentNonMerge": 1123
+    }
+  },
+  "sharedOnlyBeyondMainline": 115,
+  "portableOnlyBeyondShared": 4,
+  "otherBranches": "Excluded; no all-branches activity total or acceptance claim.",
+  "daily": [
+    {
+      "date": "2026-10-11",
+      "shared": 164,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-12",
+      "shared": 337,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-13",
+      "shared": 84,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-14",
+      "shared": 78,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-15",
+      "shared": 284,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-16",
+      "shared": 162,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-17",
+      "shared": 60,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-18",
+      "shared": 63,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-19",
+      "shared": 88,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-20",
+      "shared": 133,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-21",
+      "shared": 275,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-22",
+      "shared": 42,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-23",
+      "shared": 3,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-24",
+      "shared": 31,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-25",
+      "shared": 59,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-26",
+      "shared": 7,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-27",
+      "shared": 11,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-28",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-29",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-30",
+      "shared": 18,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-10-31",
+      "shared": 1,
+      "portableOnly": 4
+    }
+  ]
+}
