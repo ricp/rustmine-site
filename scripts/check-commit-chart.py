@@ -32,6 +32,16 @@ for (date,count,zero,label,height),expected in zip(bars,days):
 assert start.strftime('%d').lstrip('0')+'–'+end.strftime('%d').lstrip('0')+' October 2026' in figure
 assert '68cd7f1' not in figure and '9cd23f9d' not in figure
 assert 'all commits reachable' in re.search(r'id="commit-count-method".*?</details>',journal,re.S).group().lower()
+example=data.get('excludedActivityExample')
+if example:
+    note=re.search(r'<p class="build-chart-note" id="excluded-commit-activity">(.*?)</p>',figure,re.S).group(1)
+    for date in example['allCurrentlyReadableRefsUniqueNonMerge']:
+        for scope in ['shared','portable']:
+            assert data['heads'][scope]['daily'].get(date,0)==0, 'Zero-day explanation must be revised for the new accepted ancestry'
+    assert example['allTheseDatedCommitsOutsideSharedAndPortable']
+    a,b=example['allCurrentlyReadableRefsUniqueNonMerge'].values()
+    assert f'<strong>{a} and {b}</strong>' in note
+    assert example['sourceReviewedCheckpoint'][:8] in note
 for name in ['index.html','progress/index.html']:
     text=(root/name).read_text()
     shared_region=text[text.index('<div class="build-latest"'):]
