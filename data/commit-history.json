@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedUtc": "2026-10-31T19:18:51.276974+00:00",
+  "checkedUtc": "2026-10-31T21:42:13.671082+00:00",
   "dateBasis": "Git committer timestamp converted to UTC",
   "ancestry": "All commits reachable from each exact head, deduplicated by full SHA; commits with two or more parents excluded. Not first-parent.",
   "range": {
@@ -39,11 +39,11 @@
       "firstParentNonMerge": 1651
     },
     "portable": {
-      "commit": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
-      "tree": "2b28bff80b3a484fb4a5dfbea85409eb972abd35",
-      "committerUtc": "2026-11-01T01:00:06+07:00",
-      "uniqueNonMerge": 1904,
-      "shaSetSha256": "a5883a5f6d07789b00c9202ae570e997ce610c05035252f9e4f4d855f85cb0a0",
+      "commit": "d740788cdc9c0bce309356e9849b2e8e67dfba64",
+      "tree": "e7efb4e45bb86295486f5686e0f9566c9e7f2311",
+      "committerUtc": "2026-10-31T20:52:20Z",
+      "uniqueNonMerge": 1905,
+      "shaSetSha256": "63e0ade5e7dd3dfc0c95f529febf00be7444804184b25d9f0138ca0c3b6aec80",
       "daily": {
         "2026-10-11": 164,
         "2026-10-12": 337,
@@ -63,14 +63,14 @@
         "2026-10-26": 7,
         "2026-10-27": 11,
         "2026-10-30": 18,
-        "2026-10-31": 5
+        "2026-10-31": 6
       },
-      "firstParentNonMerge": 1655
+      "firstParentNonMerge": 1656
     },
     "mainline": {
       "commit": "eff7f9e02142b4d3e9ee704b9ec6be2e6292f3f1",
       "tree": "8f819cb6f27c842f10441086493aac0f0d5e81b1",
-      "committerUtc": "2026-10-24T16:18:46+07:00",
+      "committerUtc": "2026-10-24T09:18:46Z",
       "uniqueNonMerge": 1785,
       "shaSetSha256": "87a83e2ccdeaa3cc3d6b1f516e24ccab22acecd2f67e0c2fb25a510f2037c91a",
       "daily": {
@@ -94,7 +94,7 @@
     "legacy": {
       "commit": "68cd7f1129ed5b091f80b8e252e0efbe35eef1a6",
       "tree": "81e005a24cea91f8ff3adc6028b78569e8e5a483",
-      "committerUtc": "2026-10-19T22:48:53+07:00",
+      "committerUtc": "2026-10-19T15:48:53Z",
       "uniqueNonMerge": 1290,
       "shaSetSha256": "c438d4edefa1ba329bc1bd161262fff528ff76869fee5a4438878ae401a27d8a",
       "daily": {
@@ -112,7 +112,7 @@
     }
   },
   "sharedOnlyBeyondMainline": 115,
-  "portableOnlyBeyondShared": 4,
+  "portableOnlyBeyondShared": 5,
   "otherBranches": "Excluded; no all-branches activity total or acceptance claim.",
   "daily": [
     {
@@ -218,7 +218,22 @@
     {
       "date": "2026-10-31",
       "shared": 1,
-      "portableOnly": 4
+      "portableOnly": 5
     }
-  ]
+  ],
+  "excludedActivityExample": {
+    "checkedUtc": "2026-10-31T21:42:13.671082+00:00",
+    "dateBasis": "Git committer timestamp converted to UTC",
+    "allCurrentlyReadableRefsUniqueNonMerge": {
+      "2026-10-28": 36,
+      "2026-10-29": 45
+    },
+    "allTheseDatedCommitsOutsideSharedAndPortable": true,
+    "sourceReviewedCheckpoint": "0bdb378feba60e115e6e34d6c0383c0943a537b1",
+    "sourceReviewedCounts": {
+      "2026-10-28": 19,
+      "2026-10-29": 6
+    },
+    "status": "Source review is not runtime/feature acceptance; no patch-equivalence analysis. These values are excluded from the shared chart."
+  }
 }
