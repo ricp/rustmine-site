@@ -29,7 +29,13 @@ for (date,count,zero,label,height),expected in zip(bars,days):
     assert f'href="#build-day-{date}"' in figure
     header=re.search(rf'<details class="build-day" id="build-day-{date}"><summary>(.*?)</summary>',journal,re.S).group(1)
     assert f'{count} shared-ancestry commit' + ('' if int(count)==1 else 's') in header
-assert start.strftime('%d').lstrip('0')+'–'+end.strftime('%d').lstrip('0')+' October 2026' in figure
+if start.year == end.year and start.month == end.month:
+    range_label=f'{start.day}–{end.day} {end:%B %Y}'
+elif start.year == end.year:
+    range_label=f'{start.day} {start:%B}–{end.day} {end:%B %Y}'
+else:
+    range_label=f'{start.day} {start:%B %Y}–{end.day} {end:%B %Y}'
+assert range_label in figure
 assert '68cd7f1' not in figure and '9cd23f9d' not in figure
 assert 'all commits reachable' in re.search(r'id="commit-count-method".*?</details>',journal,re.S).group().lower()
 example=data.get('excludedActivityExample')
