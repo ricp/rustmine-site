@@ -1,20 +1,20 @@
 {
   "schema": 1,
-  "checkedUtc": "2026-10-31T21:42:13.671082+00:00",
+  "checkedUtc": "2026-11-01T18:53:29.981256+00:00",
   "dateBasis": "Git committer timestamp converted to UTC",
   "ancestry": "All commits reachable from each exact head, deduplicated by full SHA; commits with two or more parents excluded. Not first-parent.",
   "range": {
     "start": "2026-10-11",
-    "end": "2026-10-31"
+    "end": "2026-11-01"
   },
-  "acceptedSharedUtc": "2026-10-31T13:50:32.848432Z",
+  "acceptedSharedUtc": "2026-11-01T18:40:18.175353Z",
   "heads": {
     "shared": {
-      "commit": "0153760446615584d53dd2822d08d31533aa4991",
-      "tree": "e84975731c484a0cdd7036ae7a1932320b6a8a72",
-      "committerUtc": "2026-10-31T10:16:43Z",
-      "uniqueNonMerge": 1900,
-      "shaSetSha256": "6300f5ce07397326d2efe69da82365be674a1725044be71bcb5eb5c35fd7685d",
+      "commit": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
+      "tree": "2b28bff80b3a484fb4a5dfbea85409eb972abd35",
+      "committerUtc": "2026-10-31T18:00:06Z",
+      "uniqueNonMerge": 1904,
+      "shaSetSha256": "a5883a5f6d07789b00c9202ae570e997ce610c05035252f9e4f4d855f85cb0a0",
       "daily": {
         "2026-10-11": 164,
         "2026-10-12": 337,
@@ -34,9 +34,9 @@
         "2026-10-26": 7,
         "2026-10-27": 11,
         "2026-10-30": 18,
-        "2026-10-31": 1
+        "2026-10-31": 5
       },
-      "firstParentNonMerge": 1651
+      "firstParentNonMerge": 1655
     },
     "portable": {
       "commit": "d740788cdc9c0bce309356e9849b2e8e67dfba64",
@@ -111,8 +111,8 @@
       "firstParentNonMerge": 1123
     }
   },
-  "sharedOnlyBeyondMainline": 115,
-  "portableOnlyBeyondShared": 5,
+  "sharedOnlyBeyondMainline": 119,
+  "portableOnlyBeyondShared": 1,
   "otherBranches": "Excluded; no all-branches activity total or acceptance claim.",
   "daily": [
     {
@@ -217,8 +217,13 @@
     },
     {
       "date": "2026-10-31",
-      "shared": 1,
-      "portableOnly": 5
+      "shared": 5,
+      "portableOnly": 1
+    },
+    {
+      "date": "2026-11-01",
+      "shared": 0,
+      "portableOnly": 0
     }
   ],
   "excludedActivityExample": {
