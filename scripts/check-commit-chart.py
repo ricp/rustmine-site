@@ -47,16 +47,18 @@ for name in ['index.html','progress/index.html']:
     shared_region=text[text.index('<div class="build-latest"'):]
     shared_short=re.search(r'<code>([^<]+)</code>',shared_region).group(1)
     assert data['heads']['shared']['commit'].startswith(shared_short),(name,'shared head stale',shared_short)
-    marker='<aside class="build-progress"' if name=='index.html' else '<section class="build-progress"'
-    portable_region=text[text.index(marker):]
+    portable_match=re.search(r'<(aside|section) class="build-progress" data-commit-scope="portable"[^>]*>.*?</\1>',text,re.S)
+    assert portable_match, (name,'explicit portable scope missing')
+    portable_region=portable_match.group(0)
     portable_short=re.search(r'<code>([^<]+)</code>',portable_region).group(1)
     assert data['heads']['portable']['commit'].startswith(portable_short),(name,'portable head stale',portable_short)
     counter=re.search(r'<p data-commit-count-summary="true">(.*?)</p>',text,re.S).group(1)
     for count in [data['heads']['shared']['uniqueNonMerge'],data['heads']['mainline']['uniqueNonMerge'],data['portableOnlyBeyondShared']]:
         assert f'<strong>{count:,}</strong>' in counter
     # A later accepted/shared or portable milestone must extend the chart's date range.
-    current_dates=re.findall(r'<time datetime="([^\"]+)"',shared_region.split('<section class="build-progress"')[0]+portable_region.split('</section>')[0])
-    for value in current_dates[:2]:assert end>=dt.date.fromisoformat(value[:10]),(name,'chart ends before current milestone')
+    # Source-only cards do not extend accepted shared/portable ancestry.
+    current_dates=[re.search(r'<time datetime="([^\"]+)"',region).group(1) for region in [shared_region,portable_region]]
+    for value in current_dates:assert end>=dt.date.fromisoformat(value[:10]),(name,'chart ends before current milestone')
 
 parser=argparse.ArgumentParser();parser.add_argument('--app-repo',type=Path);args=parser.parse_args()
 if args.app_repo:
