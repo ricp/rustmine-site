@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "checkedUtc": "2026-11-01T18:53:29.981256+00:00",
+  "checkedUtc": "2026-11-04T16:42:42.151735+00:00",
   "dateBasis": "Git committer timestamp converted to UTC",
   "ancestry": "All commits reachable from each exact head, deduplicated by full SHA; commits with two or more parents excluded. Not first-parent.",
   "range": {
     "start": "2026-10-11",
-    "end": "2026-11-01"
+    "end": "2026-11-04"
   },
   "acceptedSharedUtc": "2026-11-01T18:40:18.175353Z",
   "heads": {
@@ -224,6 +224,21 @@
       "date": "2026-11-01",
       "shared": 0,
       "portableOnly": 0
+    },
+    {
+      "date": "2026-11-02",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-03",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-04",
+      "shared": 0,
+      "portableOnly": 0
     }
   ],
   "excludedActivityExample": {
@@ -240,5 +255,12 @@
       "2026-10-29": 6
     },
     "status": "Source review is not runtime/feature acceptance; no patch-equivalence analysis. These values are excluded from the shared chart."
+  },
+  "localUiOverlay": {
+    "verifiedUtc": "2026-11-04T16:17:00Z",
+    "sourceBase": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
+    "candidateBinarySha256": "72e5f25d0685c9363d989cca23098a91a7c8209629783e82fef64813e2265e90",
+    "status": "Pinned local UI changes; no new application Git head counted",
+    "journalAnchor": "/journal/#milestone-2026-11-04-local-ui"
   }
 }
