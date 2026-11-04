@@ -26,6 +26,8 @@
 .video-clip-name { display: block; font-weight: 750; line-height: 1.2; }
 .video-clip-sub { display: block; margin-top: .25rem; color: var(--muted); font: .72rem var(--mono); }
 .video-foot { margin: .85rem 0 0; color: var(--muted); font-size: .82rem; }
+.comparison-video .video-featured { margin: 0; }
+.comparison-video .video-featured video { aspect-ratio: 1902 / 932; }
 @media (max-width: 900px) {
   .video-layout { grid-template-columns: 1fr; }
   .video-playlist { grid-template-columns: repeat(3, minmax(0, 1fr)); }
