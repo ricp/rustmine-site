@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "checkedUtc": "2026-11-06T17:36:23.375616+00:00",
+  "checkedUtc": "2026-11-11T07:10:34.914218+00:00",
   "dateBasis": "Git committer timestamp converted to UTC",
   "ancestry": "All commits reachable from each exact head, deduplicated by full SHA; commits with two or more parents excluded. Not first-parent.",
   "range": {
     "start": "2026-10-11",
-    "end": "2026-11-06"
+    "end": "2026-11-11"
   },
   "acceptedSharedUtc": "2026-11-01T18:40:18.175353Z",
   "heads": {
@@ -249,6 +249,31 @@
       "date": "2026-11-06",
       "shared": 0,
       "portableOnly": 0
+    },
+    {
+      "date": "2026-11-07",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-08",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-09",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-10",
+      "shared": 0,
+      "portableOnly": 0
+    },
+    {
+      "date": "2026-11-11",
+      "shared": 0,
+      "portableOnly": 0
     }
   ],
   "excludedActivityExample": {
@@ -266,11 +291,20 @@
     },
     "status": "Source review is not runtime/feature acceptance; no patch-equivalence analysis. These values are excluded from the shared chart."
   },
+  "localUiOverlayHistory": [
+    {
+      "verifiedUtc": "2026-11-04T16:17:00Z",
+      "sourceBase": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
+      "candidateBinarySha256": "72e5f25d0685c9363d989cca23098a91a7c8209629783e82fef64813e2265e90",
+      "status": "Pinned local UI changes; no new application Git head counted",
+      "journalAnchor": "/journal/#milestone-2026-11-04-local-ui"
+    }
+  ],
   "localUiOverlay": {
-    "verifiedUtc": "2026-11-04T16:17:00Z",
+    "verifiedUtc": "2026-11-09T18:48:48.325003+00:00",
     "sourceBase": "0c82dd7872158b3312071b167e92e8199cbb2e1e",
-    "candidateBinarySha256": "72e5f25d0685c9363d989cca23098a91a7c8209629783e82fef64813e2265e90",
-    "status": "Pinned local UI changes; no new application Git head counted",
-    "journalAnchor": "/journal/#milestone-2026-11-04-local-ui"
+    "candidateBinarySha256Prefix": "8846721b2424",
+    "status": "Delivered 9 November canonical-date local source overlay; no new application Git head counted. This is a dated identity/availability/data-preservation check, not current health or whole-theme acceptance.",
+    "journalAnchor": "/journal/#milestone-2026-11-09-review-preview"
   }
 }
