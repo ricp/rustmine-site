@@ -23,7 +23,7 @@
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && menu.open) { event.preventDefault(); menu.open = false; summary.focus(); }
       });
-      window.addEventListener('resize', () => { if (window.innerWidth > 1050) menu.open = false; });
+      window.addEventListener('resize', () => { if (window.innerWidth > 1150) menu.open = false; });
     })();
     (() => {
       const buttons = [...document.querySelectorAll('[data-filter]')];
