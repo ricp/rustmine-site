@@ -12,7 +12,21 @@ The favicon set uses the current site's orange square mark on deep forest green.
 
 The public footer discloses Cloudflare Web Analytics and Google Analytics 4. `analytics.js` loads the supplied GA4 Measurement ID automatically, lets the standard `config` call send its initial page view, records the current RustMine.org page path without query or fragment, keeps only a referrer's origin, and disables advertising signals and personalization in the tag. It makes no separate manual `page_view` call. Google account-side Enhanced Measurement settings have not been verified and may add events independently of this script. No visitor opt-in is presented.
 
-## Cloudflare Pages
+## Cloudflare Workers Builds
+
+The existing `rustmine-site` service runs its repository commands from this repository root. A supplied historical failed-build log ran `npx wrangler preview` and reported the missing `previews` block. The root `wrangler.jsonc` now declares an assets-only site, the compatibility date and the required empty Preview configuration. It needs no Worker entry point, application bindings, package installation step or site compilation.
+
+- Assets directory: `.` (repository root)
+- Branch Preview command: `npx wrangler preview`
+- Production command: `npx wrangler deploy`
+
+These are distinct Wrangler commands supported by this configuration; this repository change does not alter dashboard commands, routing, domains or access settings. An exact-head successful check and deployed-content verification are still required before reporting publication. See Cloudflare's [Preview configuration](https://developers.cloudflare.com/workers/previews/configuration/) and [static assets configuration](https://developers.cloudflare.com/workers/static-assets/binding/).
+
+The root `.assetsignore` is an explicit public upload allowlist. It includes the seven HTML routes, shared styles/scripts, existing public media, icons, robots/sitemap and `data/commit-history.json`. It excludes Git metadata, repository documentation, scripts, deployment configuration and any other root content. Assets retain directory-index trailing-slash handling; unknown paths do not fall back to a single-page application.
+
+## Historical Cloudflare Pages configuration
+
+The earlier Pages setup was documented as follows. It is retained as history, rather than evidence of the current Workers Builds commands:
 
 - Production branch: `main`
 - Framework preset: None
