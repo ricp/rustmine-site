@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#102b27">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="RustMine is in development. Read the tested Redmine baselines, bounded workflow and database evidence, availability, and the compatibility gates still open.">
+  <link rel="canonical" href="https://rustmine.org/status/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RustMine">
+  <meta property="og:url" content="https://rustmine.org/status/">
+  <meta property="og:title" content="Current status and compatibility | RustMine">
+  <meta property="og:description" content="RustMine is in development. Read the tested Redmine baselines, bounded workflow and database evidence, availability, and the compatibility gates still open.">
+  <meta property="og:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:secure_url" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Current status and compatibility | RustMine">
+  <meta name="twitter:description" content="RustMine is in development. Read the tested Redmine baselines, bounded workflow and database evidence, availability, and the compatibility gates still open.">
+  <meta name="twitter:image" content="https://rustmine.org/social-card-2026-10-20.png">
+  <meta name="twitter:image:alt" content="RustMine: Keep Redmine’s data. Rebuild its core in Rust.">
+  <title>Current status and compatibility | RustMine</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rustmine.org/#website",
+      "name": "RustMine",
+      "url": "https://rustmine.org/",
+      "description": "Richard Piacentini’s public engineering journal about an experimental rewrite of Redmine in Rust."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rustmine.org/status/#webpage",
+      "url": "https://rustmine.org/status/",
+      "name": "Current status and compatibility | RustMine",
+      "description": "RustMine is in development. Read the tested Redmine baselines, bounded workflow and database evidence, availability, and the compatibility gates still open.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://rustmine.org/#website"
+      },
+      "author": {
+        "@id": "https://rustmine.org/#author"
+      },
+      "dateModified": "2026-11-18T09:14:56Z"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rustmine.org/#author",
+      "name": "Richard Piacentini",
+      "sameAs": [
+        "https://www.linkedin.com/in/richardpiacentini/"
+      ]
+    }
+  ]
+}
+  </script>
+    <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="corner"><div class="ribbon"><span>SITE UPDATED</span><time datetime="2026-11-18">18 NOV 2026</time><small>UTC · IN PROGRESS</small></div></div>
+    <div class="wrap header-row">
+      <div class="brand-lockup"><a class="brand" href="/" aria-label="RustMine home"><span class="brand-mark" aria-hidden="true"><span></span></span>RustMine<span style="color:var(--accent)">.</span></a></div>
+      <nav class="site-nav desktop-nav" id="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/progress/">Progress</a><a href="/screens/">Screens</a><a href="/method/">Method</a><a href="/journal/">Journal</a><a class="nav-contact" href="/#contact">Contact</a></nav>
+      <details class="mobile-menu" id="mobile-menu">
+        <summary><span class="menu-glyph" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="site-nav mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/progress/">Progress</a><a href="/screens/">Screens</a><a href="/method/">Method</a><a href="/journal/">Journal</a><a href="/design/">Design directions</a><a href="/status/" aria-current="page">Status</a><a href="/privacy/">Privacy</a><a class="mobile-contact" href="/#contact">Contact</a></nav>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+<section class="build-timeline" aria-labelledby="status-title"><div class="wrap">
+<div class="build-head"><div><div class="eyebrow">Current status · reviewed <time datetime="2026-11-18">18 November 2026 UTC</time></div><h1 id="status-title">What RustMine can claim today.</h1><p>RustMine is Richard Piacentini’s independent experiment to rebuild Redmine’s core in Rust while preserving the data and behavior people rely on. It is still in development. It is not a completed Alpha, a released demo or a production replacement for Redmine.</p></div></div>
+<section class="build-progress" id="availability" aria-labelledby="availability-title"><h2 id="availability-title">Availability and source</h2><p>The application source remains private. There is no publicly released RustMine installer, container or hosted hands-on demo established by the current evidence. The public <a href="https://github.com/ricp/rustmine-site">website repository</a> contains this informational site, not the application source. Existing <a href="/screens/">screenshots and recordings</a> show dated development work, not access to a current service.</p><p>Plugin compatibility is deferred. RustMine is not ready for customer installations. There is no measured performance or hosting-cost advantage to report, and no completion percentage or release date is promised.</p></section>
+<section class="build-progress" id="tested" aria-labelledby="tested-title"><h2 id="tested-title">What has actually been checked</h2><ul>
+<li><strong>Project forms:</strong> five designed browser scenarios were functionally accepted on 6 November 2026 against Redmine 7.0.3, using separate copies of the same fixture database and files: successful creation, missing name, duplicate identifier, permission denial and editing. Timestamp, UI and partial request-capture qualifications remain. This is not acceptance of every project workflow.</li>
+<li><strong>Local SQLite workflows:</strong> focused Rust Router tests and selected controlled HTTP checks cover slices of issue queries, custom fields, grouping, totals, saved queries, time entries and CSV, LDAP administration, signup, preferences and account changes. The November 18 work includes targeted account-token revocation, encrypted notification intents and rollback under injected native outbox faults. Many checks use synthetic fixtures and selected test entry points. Their counts are not global compatibility scores.</li>
+<li><strong>Redmine baselines:</strong> source comparisons use pinned Redmine 7.0.2 references; the separate five-case project-form comparison used 7.0.3. Neither baseline implies compatibility with every release, configuration or extension.</li>
+<li><strong>PostgreSQL preparation:</strong> dated 1 November local Mac ARM64 work used PostgreSQL 18.6 and schema derived from Redmine 7.0.2 migrations, with synthetic demo rows and bounded login, restart, logout and preservation checks. Hosted AMD64/PostgreSQL demo acceptance is still unverified. Later SQLite checks do not upgrade that older preparation.</li></ul><p>The latest private local integration reviewed for this page is checkpoint 255, accepted on 18 November at 08:30 UTC. Its additional notification-message checks remain bounded local evidence. The <a href="/progress/#account-signup-2026-11-18">public progress summary</a> records the earlier 05:50 UTC checkpoint with its own scope. Neither date means the application was deployed.</p></section>
+<section class="build-progress" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">What remains unverified or unsupported</h2><ul>
+<li>Full Redmine feature, permission, plugin, localization, wire-format and whole-page parity; complete browser journeys; production, security and concurrency certification.</li>
+<li>General PostgreSQL/MySQL runtime parity. Positive timestamp grouping, SQL/decoder/session-timezone behavior and broader hosted database gates remain separate. SQLite Closed-date grouping remains flat; the grouped-spent provider intersection is still held.</li>
+<li>Known bounded limitations remain, including Tracker NULL-reference hydration, Priority type/mask cases and non-atomic count/SUM reads. CSV checks do not establish every encoding, field format or pagination combination.</li>
+<li>Real-directory and LDAPS certification. Controlled LDAP bind/search/login and administrator-form checks are not a generic directory guarantee.</li>
+<li>Complete theme acceptance. Default/core is selected but broader visual/interaction acceptance remains open. Classic and Alternate are separately implemented and package checked, with visual review and accepted-preview integration pending. Foundry, Clearline and Common Ground are each experimental and unintegrated.</li></ul><p>Some areas are implemented on a branch, others have passed focused validation, and only explicitly dated work is integrated into a review preview. Source review, a successful build, a corrected fixture or a later passing run does not prove an earlier failed execution restored its data.</p></section>
+<section class="build-progress" id="evidence" aria-labelledby="evidence-title"><h2 id="evidence-title">How to assess the evidence</h2><p>Read <a href="/progress/">Progress</a> for accepted scopes and open gates, <a href="/journal/">Journal</a> for dated history, and <a href="/method/">Method</a> for the comparison process. The commit chart records specific accepted shared-preview ancestry; it is not a measure of compatibility, time worked or the latest private integration. This website is independent of Redmine and is not affiliated with it.</p><p>When citing RustMine, include the evidence date and limitations. For questions or future testing interest, <a href="/#contact">contact Richard</a>.</p></section>
+</div></section>
+  </main>
+<footer><div class="wrap"><span>I’m Richard Piacentini. RustMine is my independent project and is not affiliated with Redmine.</span><span>Site content updated · <time datetime="2026-11-18">18 November 2026 UTC</time></span><p><a href="/status/" aria-current="page">Current status and compatibility</a></p><p class="footer-analytics">Analytics: Cloudflare Web Analytics and Google Analytics 4 run automatically on visits. <a href="/privacy/">Privacy details</a>. · <a href="/design/">Design directions</a> · <a href="/">Home</a>.</p></div></footer>
+  <script src="/analytics.js" defer></script>
+  <script src="/site.js" defer></script>
+</body>
+</html>
