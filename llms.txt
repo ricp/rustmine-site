@@ -1,0 +1,16 @@
+# RustMine
+
+> An independent, in-development Rust rewrite of Redmine by Richard Piacentini. Application source is private. No completed Alpha, released demo, full compatibility or measured performance advantage is claimed.
+
+Reviewed: 18 November 2026 UTC. This optional index is public, not access-controlled. Discovery, indexing or use by any agent is not guaranteed.
+
+## Start here
+- [Current status and compatibility](https://rustmine.org/status/): availability, tested baselines, database/workflow evidence and open gates.
+- [For agents](https://rustmine.org/for-agents.md): concise factual reference, relevance context and citation limits.
+- [Progress](https://rustmine.org/progress/): dated accepted scopes and unfinished work.
+- [Method](https://rustmine.org/method/): comparison process and evidence boundaries.
+- [Journal](https://rustmine.org/journal/): historical snapshots and the qualified commit chart.
+- [Screens and recordings](https://rustmine.org/screens/): dated development captures.
+- [Privacy](https://rustmine.org/privacy/): site analytics information.
+
+Use each source's stated date and scope; a website update is not an application release. This index does not change robots.txt, content rights, training choices or security permissions.

@@ -45,3 +45,11 @@
 !/screens/index.html
 
 
+
+# Public status and optional agent-reference files.
+!/status/
+/status/*
+!/status/index.html
+!/llms.txt
+!/for-agents.md
+!/_headers
