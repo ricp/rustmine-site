@@ -611,3 +611,13 @@
   .timeline .entry { display: block; padding: 1rem 0; }
   .timeline .entry h3 { font-size: 1.2rem; margin: .25rem 0 0; }
 }
+
+    /* RM-WORKS-01: a compact route from the existing hero to the public catalog. */
+    .site-nav .nav-works { border-bottom-color: var(--accent); color: #fff5ea; }
+    .works-callout { background: #e7eee3; border-top: 3px solid var(--accent); border-bottom: 1px solid #bacabe; }
+    .works-callout > .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding-block: 1.1rem; }
+    .works-callout h2 { margin: 0 0 .3rem; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+    .works-callout p { margin: 0; color: #39564c; font-size: .95rem; }
+    .works-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .65rem 1rem; background: var(--forest-deep); border: 1px solid var(--forest-deep); color: #fff; font-weight: 700; text-decoration: none; flex: none; }
+    .works-cta:hover { background: var(--forest); }
+    @media (max-width: 680px) { .works-callout > .wrap { flex-direction: column; align-items: flex-start; gap: .8rem; } }
