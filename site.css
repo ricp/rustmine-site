@@ -139,6 +139,21 @@
     .build-latest-total { flex: none; min-width: 132px; text-align: right; }
     .build-latest-total strong { display: block; color: #a34b2e; font: 500 clamp(3.2rem, 6vw, 5.4rem)/1 var(--serif); letter-spacing: -.06em; }
     .build-latest-total span { display: block; color: var(--muted); font: 700 .875rem/1.35 var(--mono); text-transform: uppercase; }
+    .build-recent { margin: 0 0 2rem; padding: 1.4rem 1.6rem; border: 1px solid #77988a; border-left: 4px solid var(--accent); background: #16483c; color: var(--paper); scroll-margin-top: 108px; }
+    .build-recent h3 { margin: .35rem 0 .6rem; font: 500 2rem/1.15 var(--serif); }
+    .build-recent > p { margin: .6rem 0 1rem; max-width: 960px; }
+    .build-recent .activity-chart { margin: 1.1rem 0 1.4rem; }
+    .build-recent ol { list-style: none; padding: 0; margin: .5rem 0 1rem; }
+    .build-recent li { display: grid; grid-template-columns: 115px minmax(0, 1fr); gap: 1.1rem; padding: .9rem 0; border-top: 1px solid #77988a; scroll-margin-top: 108px; }
+    .build-recent li time { font: 700 .9rem/1.6 var(--mono); }
+    .build-recent li h4 { margin: 0 0 .3rem; font: 700 1.1rem/1.4 var(--sans); }
+    .build-recent li p { margin: .2rem 0; font-size: 1rem; line-height: 1.6; }
+    .build-recent .activity-count { font: 700 .85rem/1.5 var(--mono); color: #d5e5d9; }
+    .activity-summary-week > summary { padding: .7rem 0; cursor: pointer; font-weight: 700; }
+    .build-recent > p a, .activity-summary-week a { color: var(--paper); text-underline-offset: .2em; }
+    .build-recent-link a, .activity-link a { font-weight: 700; }
+    .activity-chart .build-chart-day[data-unknown="true"] .build-bar { min-height: 0; border-top: 2px dotted #84958b; background: transparent; }
+    @media (max-width: 620px) { .build-recent { padding: 1rem; } .build-recent li { grid-template-columns: minmax(0, 1fr); gap: .35rem; } .build-recent li time br { display: none; } .build-recent .activity-chart { margin-left: -.5rem; margin-right: -.5rem; padding: 1rem; } }
     .build-chart { margin: 0; padding: 1.45rem 1.8rem 1.25rem; background: var(--paper); color: var(--ink); }
     .build-chart figcaption { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1rem; }
     .build-chart figcaption strong { font: 500 1.5rem var(--serif); letter-spacing: -.025em; }

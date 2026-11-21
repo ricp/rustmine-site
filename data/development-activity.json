@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "countedAtUtc": "2026-11-21T09:54:40.888023+00:00",
+  "range": {
+    "start": "2026-11-01",
+    "end": "2026-11-21"
+  },
+  "method": "Unique full Git commit identities reachable from the scanned application branch and worktree heads, including merge commits, bucketed by UTC committer date. No test, acceptance or merge-status filter.",
+  "scope": {
+    "applicationGitRepositories": 2,
+    "localBranchHeads": 1572,
+    "recordedRemoteTrackingHeads": 448,
+    "existingRegisteredWorktrees": 943,
+    "description": "Locally available application integration and implementation branch heads, locally recorded remote-tracking branch heads and existing registered worktree heads in the legacy and current integration object stores.",
+    "excluded": "Website repository, uncommitted changes, reflogs, stash/tag/archive-only refs, backup-only refs and missing-worktree-only heads. No network refresh or unavailable external repositories. Work completed without a reachable commit is not counted."
+  },
+  "totalUniqueCommits": 1199,
+  "mergeCommits": 23,
+  "daily": [
+    {
+      "date": "2026-11-01",
+      "commits": 4,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-02",
+      "commits": 5,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-03",
+      "commits": 3,
+      "mergeCommits": 1
+    },
+    {
+      "date": "2026-11-04",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-05",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-06",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-07",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-08",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-09",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-10",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-11",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-12",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-13",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-14",
+      "commits": null,
+      "mergeCommits": null,
+      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+    },
+    {
+      "date": "2026-11-15",
+      "commits": 308,
+      "mergeCommits": 22
+    },
+    {
+      "date": "2026-11-16",
+      "commits": 283,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-17",
+      "commits": 203,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-18",
+      "commits": 141,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-19",
+      "commits": 148,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-20",
+      "commits": 78,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-21",
+      "commits": 26,
+      "mergeCommits": 0
+    }
+  ],
+  "qualification": "Committed source activity, including untested and unmerged work, not feature completion, test passes or deployed releases. The final day is partial through the stated cutoff. Work without a reachable commit is excluded.",
+  "coverage": "Lower bound for the explicitly scanned available refs. November 4\u201314 counts are not established; they are not displayed as zero. Other unavailable repositories or refs may contain additional commits."
+}
