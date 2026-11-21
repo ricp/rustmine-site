@@ -11,11 +11,12 @@
     "localBranchHeads": 1572,
     "recordedRemoteTrackingHeads": 448,
     "existingRegisteredWorktrees": 943,
-    "description": "Locally available application integration and implementation branch heads, locally recorded remote-tracking branch heads and existing registered worktree heads in the legacy and current integration object stores.",
-    "excluded": "Website repository, uncommitted changes, reflogs, stash/tag/archive-only refs, backup-only refs and missing-worktree-only heads. No network refresh or unavailable external repositories. Work completed without a reachable commit is not counted."
+    "description": "Captured local application integration and implementation branches, locally recorded remote-tracking branches and existing registered worktrees in two Git stores, plus all 453 live remote application branch heads. Full commit identities are unioned across these sources.",
+    "excluded": "Website repository, uncommitted changes, reflog/stash/tag/archive-only refs, automated checkout-only snapshot objects, backup-only refs and missing-worktree-only heads. Earlier unavailable local repositories are not covered.",
+    "liveRemoteBranchHeads": 453
   },
-  "totalUniqueCommits": 1199,
-  "mergeCommits": 23,
+  "totalUniqueCommits": 1218,
+  "mergeCommits": 24,
   "daily": [
     {
       "date": "2026-11-01",
@@ -29,14 +30,13 @@
     },
     {
       "date": "2026-11-03",
-      "commits": 3,
-      "mergeCommits": 1
+      "commits": 11,
+      "mergeCommits": 2
     },
     {
       "date": "2026-11-04",
-      "commits": null,
-      "mergeCommits": null,
-      "coverage": "Not established: earlier application Git roots are outside this captured scan."
+      "commits": 11,
+      "mergeCommits": 0
     },
     {
       "date": "2026-11-05",
@@ -135,5 +135,7 @@
     }
   ],
   "qualification": "Committed source activity, including untested and unmerged work, not feature completion, test passes or deployed releases. The final day is partial through the stated cutoff. Work without a reachable commit is excluded.",
-  "coverage": "Lower bound for the explicitly scanned available refs. November 4\u201314 counts are not established; they are not displayed as zero. Other unavailable repositories or refs may contain additional commits."
+  "coverage": "Lower bound for the explicitly scanned local and live remote refs. November 5\u201314 counts are not established; dated work is shown instead of zero or empty bars. Other unavailable repositories may contain additional commits.",
+  "liveRemoteRefsObservedAtUtc": "2026-11-21T10:21:23.417Z",
+  "lastCensusAtUtc": "2026-11-21T10:24:11.139524+00:00"
 }

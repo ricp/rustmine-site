@@ -152,7 +152,13 @@
     .activity-summary-week > summary { padding: .7rem 0; cursor: pointer; font-weight: 700; }
     .build-recent > p a, .activity-summary-week a { color: var(--paper); text-underline-offset: .2em; }
     .build-recent-link a, .activity-link a { font-weight: 700; }
-    .activity-chart .build-chart-day[data-unknown="true"] .build-bar { min-height: 0; border-top: 2px dotted #84958b; background: transparent; }
+    .activity-gap-notes { margin: 1rem 0; padding: 1rem; background: #e4eee3; color: var(--ink); border: 1px solid #8fa197; }
+    .activity-gap-notes > p { margin: 0 0 .7rem; font-size: 1rem; line-height: 1.6; }
+    .activity-gap-notes ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem 1.2rem; }
+    .activity-gap-notes li { display: block; padding: .7rem 0; }
+    .activity-gap-notes h5 { margin: .3rem 0; font: 700 1.05rem/1.4 var(--sans); }
+    .activity-gap-notes a { color: var(--ink); font-weight: 700; text-underline-offset: .2em; }
+    @media (max-width: 620px) { .activity-gap-notes ol { grid-template-columns: minmax(0, 1fr); } }
     @media (max-width: 620px) { .build-recent { padding: 1rem; } .build-recent li { grid-template-columns: minmax(0, 1fr); gap: .35rem; } .build-recent li time br { display: none; } .build-recent .activity-chart { margin-left: -.5rem; margin-right: -.5rem; padding: 1rem; } }
     .build-chart { margin: 0; padding: 1.45rem 1.8rem 1.25rem; background: var(--paper); color: var(--ink); }
     .build-chart figcaption { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1rem; }
