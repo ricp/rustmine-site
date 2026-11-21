@@ -143,8 +143,15 @@
     .build-chart figcaption { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1rem; }
     .build-chart figcaption strong { font: 500 1.5rem var(--serif); letter-spacing: -.025em; }
     .build-chart figcaption span { color: var(--muted); font: 700 .9rem/1.45 var(--mono); }
+    .build-chart-pagination { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .75rem; margin-top: 1.25rem; }
+    .build-chart-pagination[hidden], .build-chart-page[hidden] { display: none; }
+    .build-chart-pagination p { margin: 0; text-align: center; font: 700 .9rem/1.5 var(--mono); }
+    .build-chart-pagination button { padding: .65rem .9rem; min-height: 44px; border: 1px solid var(--forest-deep); border-radius: 3px; background: var(--forest-deep); color: var(--paper); font: 700 1rem var(--sans); cursor: pointer; }
+    .build-chart-pagination button:disabled { background: transparent; color: var(--muted); border-color: #8fa197; cursor: default; }
+    .build-chart-pagination button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .build-chart-week { margin: 1.1rem 0 0; font: 700 1rem/1.5 var(--mono); }
     .build-chart-scroll { overflow-x: auto; padding: .7rem 0 .35rem; }
-    .build-chart-days { min-width: 1000px; display: grid; grid-template-columns: repeat(var(--days, 9), minmax(0, 1fr)); gap: .35rem; align-items: end; border-bottom: 1px solid #8fa197; }
+    .build-chart-days { min-width: 0; display: grid; grid-template-columns: repeat(var(--days, 9), minmax(0, 1fr)); gap: .35rem; align-items: end; border-bottom: 1px solid #8fa197; }
     .build-chart-day { display: flex; flex-direction: column; align-items: center; color: var(--ink); text-decoration: none; text-align: center; }
     .build-chart-day:hover .build-bar, .build-chart-day:focus-visible .build-bar { background: #ab4625; }
     .build-chart-day .build-value { font: 700 .95rem var(--mono); margin-bottom: .35rem; }
