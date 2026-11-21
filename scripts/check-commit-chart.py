@@ -18,17 +18,34 @@ journal = (root/'journal/index.html').read_text()
 figure = re.search(r'<figure class="build-chart".*?</figure>',journal,re.S).group()
 assert f'data-shared-head="{data["heads"]["shared"]["commit"]}"' in figure
 assert f'data-portable-head="{data["heads"]["portable"]["commit"]}"' in figure
-assert f'--days:{len(days)}' in figure
+visible_end = max(r['date'] for r in days if r['shared'])
+visible_days = [r for r in days if r['date'] <= visible_end]
+assert 'data-chart-scope="historical"' in figure
+assert f'data-historical-through="{visible_end}"' in figure
+pages = re.findall(r'<section class="build-chart-page"(.*?)</section>',figure,re.S)
+assert len(pages) == (len(visible_days)+6)//7
+for page in pages:
+    assert len(re.findall(r'class="build-chart-day"',page)) <= 7
+    assert ' hidden' not in page, 'All history must remain available without JavaScript'
+assert '--days:7' in figure
+assert 'data-chart-older' in figure and 'data-chart-newer' in figure
+assert 'archived 34-day technical ledger' in figure and 'post-head zero padding' in figure
 bars = re.findall(r'<a class="build-chart-day" data-date="([^"]+)" data-count="(\d+)" data-zero="(true|false)".*?<span class="build-value">(\d+)</span>.*?--height:([\d.]+)%',figure,re.S)
-assert len(bars)==len(days),(len(bars),len(days))
+assert len(bars)==len(visible_days),(len(bars),len(visible_days))
 maximum=max(r['shared'] for r in days)
-for (date,count,zero,label,height),expected in zip(bars,days):
+for (date,count,zero,label,height),expected in zip(bars,visible_days):
     assert date==expected['date'] and int(count)==int(label)==expected['shared']
     assert (zero=='true')==(expected['shared']==0)
     assert abs(float(height)-100*expected['shared']/maximum)<.051
     assert f'href="#build-day-{date}"' in figure
     header=re.search(rf'<details class="build-day" id="build-day-{date}"><summary>(.*?)</summary>',journal,re.S).group(1)
     assert f'{count} shared-ancestry commit' + ('' if int(count)==1 else 's') in header
+for row in days[len(visible_days):]:
+    header=re.search(rf'<details class="build-day" id="build-day-{row["date"]}"><summary>(.*?)</summary>',journal,re.S).group(1)
+    assert 'Not charted' in header and 'shared-ancestry commit' not in header
+    assert f'data-date="{row["date"]}"' not in figure
+archive_end = end
+end = dt.date.fromisoformat(visible_end)
 if start.year == end.year and start.month == end.month:
     range_label=f'{start.day}–{end.day} {end:%B %Y}'
 elif start.year == end.year:
@@ -61,10 +78,10 @@ for name in ['index.html','progress/index.html']:
     counter=re.search(r'<p data-commit-count-summary="true">(.*?)</p>',text,re.S).group(1)
     for count in [data['heads']['shared']['uniqueNonMerge'],data['heads']['mainline']['uniqueNonMerge'],data['portableOnlyBeyondShared']]:
         assert f'<strong>{count:,}</strong>' in counter
-    # A later accepted/shared or portable milestone must extend the chart's date range.
+    # Acceptance date is distinct from the visible historical committer-date range.
     # Source-only cards do not extend accepted shared/portable ancestry.
     current_dates=[re.search(r'<time datetime="([^\"]+)"',region).group(1) for region in [shared_region,portable_region]]
-    for value in current_dates:assert end>=dt.date.fromisoformat(value[:10]),(name,'chart ends before current milestone')
+    for value in current_dates:assert archive_end>=dt.date.fromisoformat(value[:10]),(name,'archive ends before accepted milestone')
 
 parser=argparse.ArgumentParser();parser.add_argument('--app-repo',type=Path);args=parser.parse_args()
 if args.app_repo:
@@ -79,4 +96,4 @@ if args.app_repo:
         sets[scope]=set(rows)
     assert sets['mainline']<=sets['shared']<=sets['portable']
     assert len(sets['portable']-sets['shared'])==data['portableOnlyBeyondShared']
-print(json.dumps({'pass':True,'utcDays':len(days),'sharedHead':data['heads']['shared']['commit'],'portableHead':data['heads']['portable']['commit'],'sharedUnique':data['heads']['shared']['uniqueNonMerge'],'portableOnly':data['portableOnlyBeyondShared'],'sourceGitRecount':bool(args.app_repo)}))
+print(json.dumps({'pass':True,'utcDays':len(days),'visibleUtcDays':len(visible_days),'visibleThrough':visible_end,'scope':'historical','sharedHead':data['heads']['shared']['commit'],'portableHead':data['heads']['portable']['commit'],'sharedUnique':data['heads']['shared']['uniqueNonMerge'],'portableOnly':data['portableOnlyBeyondShared'],'sourceGitRecount':bool(args.app_repo)}))

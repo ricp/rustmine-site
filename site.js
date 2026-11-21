@@ -117,6 +117,30 @@
       });
     })();
     (() => {
+      document.querySelectorAll('.build-chart').forEach(chart => {
+        const pages = [...chart.querySelectorAll('[data-chart-page]')];
+        const controls = chart.querySelector('.build-chart-pagination');
+        if (pages.length < 2 || !controls) return;
+        const older = controls.querySelector('[data-chart-older]');
+        const newer = controls.querySelector('[data-chart-newer]');
+        const status = controls.querySelector('[data-chart-status]');
+        let selected = pages.length - 1;
+        function show(index) {
+          selected = Math.max(0, Math.min(pages.length - 1, index));
+          pages.forEach((page, i) => { page.hidden = i !== selected; });
+          older.disabled = selected === 0;
+          newer.disabled = selected === pages.length - 1;
+          status.textContent = `${pages[selected].dataset.range} UTC · ${selected + 1} of ${pages.length}`;
+          if (document.activeElement === older && older.disabled) newer.focus();
+          if (document.activeElement === newer && newer.disabled) older.focus();
+        }
+        older.addEventListener('click', () => show(selected - 1));
+        newer.addEventListener('click', () => show(selected + 1));
+        show(selected);
+        controls.hidden = false;
+      });
+    })();
+    (() => {
       document.querySelectorAll('.build-chart-day').forEach(link => link.addEventListener('click', () => {
         const note = document.getElementById(new URL(link.href).hash.slice(1));
         if (note) note.open = true;
