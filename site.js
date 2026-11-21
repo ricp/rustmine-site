@@ -130,7 +130,7 @@
           pages.forEach((page, i) => { page.hidden = i !== selected; });
           older.disabled = selected === 0;
           newer.disabled = selected === pages.length - 1;
-          status.textContent = `${pages[selected].dataset.range} UTC · ${selected + 1} of ${pages.length}`;
+          status.textContent = `${selected === pages.length - 1 ? (chart.dataset.latestLabel || 'Last charted week') + ' · ' : ''}${pages[selected].dataset.range} UTC · ${selected + 1} of ${pages.length}`;
           if (document.activeElement === older && older.disabled) newer.focus();
           if (document.activeElement === newer && newer.disabled) older.focus();
         }
