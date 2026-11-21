@@ -4,6 +4,8 @@
 !/index.html
 !/site.css
 !/site.js
+!/what-works.css
+!/what-works.js
 !/admin-videos.css
 !/admin-videos.js
 !/analytics.js
@@ -51,6 +53,9 @@
 !/status/
 /status/*
 !/status/index.html
+!/what-works/
+/what-works/*
+!/what-works/index.html
 !/llms.txt
 !/for-agents.md
 !/_headers
