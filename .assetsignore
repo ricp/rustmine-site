@@ -25,6 +25,7 @@
 !/data/
 /data/*
 !/data/commit-history.json
+!/data/development-activity.json
 !/design/
 /design/*
 !/design/index.html
