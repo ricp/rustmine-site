@@ -1,21 +1,23 @@
 {
   "schema": 1,
-  "countedAtUtc": "2026-11-21T09:54:40.888023+00:00",
+  "countedAtUtc": "2026-11-23T07:12:17+00:00",
   "range": {
     "start": "2026-11-01",
-    "end": "2026-11-21"
+    "end": "2026-11-23"
   },
   "method": "Unique full Git commit identities reachable from the scanned application branch and worktree heads, including merge commits, bucketed by UTC committer date. No test, acceptance or merge-status filter.",
   "scope": {
     "applicationGitRepositories": 2,
-    "localBranchHeads": 1572,
+    "localBranchHeads": 1616,
     "recordedRemoteTrackingHeads": 448,
-    "existingRegisteredWorktrees": 943,
-    "description": "Captured local application integration and implementation branches, locally recorded remote-tracking branches and existing registered worktrees in two Git stores, plus all 453 live remote application branch heads. Full commit identities are unioned across these sources.",
+    "existingRegisteredWorktrees": 1017,
+    "description": "Captured application implementation/integration branches and existing registered worktree heads in two local Git stores, plus 452 eligible heads from all 453 live remote branches enumerated. One backup-only remote ref is excluded. Full commit identities are unioned across sources.",
     "excluded": "Website repository, uncommitted changes, reflog/stash/tag/archive-only refs, automated checkout-only snapshot objects, backup-only refs and missing-worktree-only heads. Earlier unavailable local repositories are not covered.",
-    "liveRemoteBranchHeads": 453
+    "liveRemoteBranchHeads": 452,
+    "liveRemoteBranchesEnumerated": 453,
+    "excludedBackupRemoteHeads": 1
   },
-  "totalUniqueCommits": 1218,
+  "totalUniqueCommits": 1303,
   "mergeCommits": 24,
   "daily": [
     {
@@ -130,12 +132,22 @@
     },
     {
       "date": "2026-11-21",
-      "commits": 26,
+      "commits": 54,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-22",
+      "commits": 36,
+      "mergeCommits": 0
+    },
+    {
+      "date": "2026-11-23",
+      "commits": 21,
       "mergeCommits": 0
     }
   ],
   "qualification": "Committed source activity, including untested and unmerged work, not feature completion, test passes or deployed releases. The final day is partial through the stated cutoff. Work without a reachable commit is excluded.",
   "coverage": "Lower bound for the explicitly scanned local and live remote refs. November 5\u201314 counts are not established; dated work is shown instead of zero or empty bars. Other unavailable repositories may contain additional commits.",
-  "liveRemoteRefsObservedAtUtc": "2026-11-21T10:21:23.417Z",
-  "lastCensusAtUtc": "2026-11-21T10:24:11.139524+00:00"
+  "liveRemoteRefsObservedAtUtc": "2026-11-23T07:13:49.489Z",
+  "lastCensusAtUtc": "2026-11-23T07:17:54.127769+00:00"
 }
