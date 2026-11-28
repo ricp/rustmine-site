@@ -11,3 +11,14 @@ Use this checklist before every publication of application activity. This is a m
 - Update aggregate data, captions, summaries, scope and cutoff together. Publish no private commit IDs, messages, paths, branch names, credentials or customer details.
 - Run both commit-chart checks, the activity checker with the captured census/remote union, and HTML/link/ID/diff validation. Verify that the exact intended public dataset is included in the static-asset allowlist while private/control files remain excluded.
 - Test desktop/mobile weekly controls, latest-first selection, known and uncovered dates, note links and the all-week no-JavaScript fallback. Promote through feature → develop → main with exact-head checks; verify the production build and actual public page/data. A commit or preview alone is not publication.
+
+## Repeatable local capture and check
+
+`scripts/collect-development-activity.py` reads Git metadata only. It does not fetch, change application refs, run the application, publish or schedule deployments. Run it on the authorized Mac with the application repositories available. The current series begins on 1 November 2026; a new month needs a deliberate reporting-range review.
+
+1. Through the authorized GitHub connector, enumerate every live application branch (all pages). Save a **private, outside-checkout** JSON file containing `observedAt` in UTC and `branches`, each with `name` and full `sha`. Never substitute stale remote-tracking refs or invent missing counts.
+2. Run the collector with repeated `--repo` arguments, an explicit UTC `--cutoff`, that `--remote-heads` file and a fresh outside-checkout `--output` path. It reports any remote tips absent from the local graph. No credentials are read or created.
+3. Obtain exact-tip commit metadata through the same authorized connector until every parent reaches the captured local graph. A private `--remote-history` JSON contains `rows`, keyed by full SHA, each with UTC `committer` and full `parents`. Run the collector again to a fresh output path with this argument. An unresolved parent frontier blocks reconciliation.
+4. Check the resulting private census with `python3 scripts/check-development-activity.py --census /private/census.json --remote-history /private/remote-history.json`, after preparing the aggregate-only public data and chart. `python3 scripts/test-development-activity.py` checks deduplication, merges, cutoff and incomplete-history refusal.
+
+Keep raw refs, paths and commit metadata private. The public site receives date totals and explicit coverage only. A recurring runner must have the authorized Mac/SSD and connector access; this script alone does not supply them or enable unattended publication. If a runner cannot reach either source, report a partial census and the exact gap instead of moving the freshness date.
